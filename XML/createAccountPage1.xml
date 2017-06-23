@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="CreateAccount_Page1_Test" user="dan.rusu">
+ 
+ 
+################################################################################## 	
+########## PAGE 1 INPUT VALIDATION ###############################################
+##################################################################################
+    	<test name="CreateAccountPage1_InputValidation" 
+  			appiumServerUrl="http://0.0.0.0:4723/wd/hub"
+  			platformName="Android"
+  			deviceName="Nexus_5X"
+  			app="C:\automationWorkspace\mobile\apk\Miles More_v1.4.1_apkpure.com.apk">
+  			
+  		<testcase name="LoginPageValidate"/>
+  	
+  		# Verify Login page static text	
+  		<testcase name="CreateAccount" 
+
+  			onBoardTitleText="Your Overview" 
+  			onBoardText="Don’t miss out on any awards or exclusive offers no matter where you are."
+  			createAccountButtonText="Create Account"
+  			signInButtonText="Sign in"
+  			stopAtFailure="false"/>
+  			
+  			
+  		<testcase name="CreateAccountPage1Validate"/>
+  		
+  		
+  		### Create Account Page 1 ###
+  		
+  		# Verify Create Account Page 1 static text
+  		<testcase name="CreateAccountPage1Setup" 
+  			pageTitleText="Register for the Miles &amp; More program right now and never miss another mile!"
+  			salutationTitleMrText="Mr."
+	  		salutationTitleMrsText="Mrs."
+		  	academicTitleText="Academic Title"
+		  	firstNameText="First Name"
+		 	lastNameText="Last Name"
+		  	signInAsGuestText="Sign in as Guest"
+		  	nextButtonText="Next"
+		  	
+		  	stopAtFailure="false"
+			note="Verify page static text."/>
+		
+		
+		
+		### Create Account Page 1 ###  	
+		# Test 1 invalid input: 
+  		# First Name input: send empty text 	
+  		# Last Name input: send empty text 	
+		 <testcase name="CreateAccountPage1Setup" /> 		 
+  			
+  			
+  		<testcase name="CreateAccountPage1Next"/> 
+  			
+  		<testcase name="VerifyCreateAcountPage1Errors" 
+  			expectedErrorsCounter="2"
+  			expectedErrors="Invalid first name. It can consist of 2 up to 15 characters.  First name may only consist of letters or a hyphen between the letters.|Invalid last name. It can consist of 2 up to 31 characters.  Last name may only consist of letters or a hyphen between the letters."
+  			stopAtFailure="false"/>
+  				
+  		
+  				
+  		### Create Account Page 1 ###
+  		# Test 2 invalid input: 
+  		# First Name input: one letter 	
+  		# Last Name input: one letter  
+  		###
+  		<testcase name="CreateAccountPage1Setup" 
+  			firstName="a" 
+  			lastName="b"/>
+  			
+  		<testcase name="CreateAccountPage1Next"/> 	
+  		
+  		<testcase name="VerifyCreateAcountPage1Errors" 
+  			expectedErrorsCounter="2"
+  			expectedErrors="Invalid first name. It can consist of 2 up to 15 characters.|Invalid last name. It can consist of 2 up to 31 characters."
+  			stopAtFailure="false"/>
+  			
+  		<!-- ISSUE - next test case cannot clear the input -->
+  
+<!--    		### Create Account Page 1 ###
+  		# Test 3 invalid input: 
+  		# First Name input: 2 letters + hyphen
+  		# Last Name input: 2 letters + hyphen 
+  		###
+  		<testcase name="CreateAccountPage1Setup" 
+  			firstName="aa-" 
+  			lastName="ba-"/>
+  			
+  		<testcase name="CreateAccountPage1Next"/> 	
+  		
+  		<testcase name="VerifyCreateAcountPage1Errors" 
+  			expectedErrorsCounter="2"
+  			expectedErrors="First name may only consist of letters or a hyphen between the letters.|Last name may only consist of letters or a hyphen between the letters."
+  			stopAtFailure="false"/>
+  		
+  		
+  		
+   		### Create Account Page 1 ###
+  		# Test 4 invalid input: 
+  		# First Name input: hyphen + 2 letters
+  		# Last Name input: hyphen + 2 letters 
+  		###
+  		<testcase name="CreateAccountPage1Setup" 
+  			firstName="-aa" 
+  			lastName="-ba"/>
+  			
+  		<testcase name="CreateAccountPage1Next"/> 	
+  		
+  		<testcase name="VerifyCreateAcountPage1Errors" 
+  			expectedErrorsCounter="2"
+  			expectedErrors="First name may only consist of letters or a hyphen between the letters.|Last name may only consist of letters or a hyphen between the letters."
+  			stopAtFailure="false"/>  -->
+			
+			
+			 	
+		### Create Account Page 1 ###
+  		# Test 5 invalid input: 
+  		# First Name input: hyphen + 2 letters
+  		# Last Name input: hyphen + 2 letters 
+  		###
+  		<testcase name="CreateAccountPage1Setup" 
+  			firstName="aa1" 
+  			lastName="bb2"/>
+  			
+  		<testcase name="CreateAccountPage1Next"/> 	
+  		
+  		<testcase name="VerifyCreateAcountPage1Errors" 
+  			expectedErrorsCounter="2"
+  			expectedErrors="First name may only consist of letters or a hyphen between the letters.|Last name may only consist of letters or a hyphen between the letters."
+  			stopAtFailure="false"/>
+			
+			
+ 		### Create Account Page 1 ###
+  		# Test 6 invalid input: 
+  		# First Name input: 2 letters + not letter character 
+  		# Last Name input: 2 letters + not letter character 
+  		<testcase name="CreateAccountPage1Setup" 
+  			firstName="!" 
+  			lastName="?"/>
+  			
+  		<testcase name="CreateAccountPage1Next"/> 	
+  		
+  		<testcase name="VerifyCreateAcountPage1Errors" 
+  			expectedErrorsCounter="2"
+  			expectedErrors="Invalid first name. It can consist of 2 up to 15 characters.  First name may only consist of letters or a hyphen between the letters.|Invalid last name. It can consist of 2 up to 31 characters.  Last name may only consist of letters or a hyphen between the letters."
+  			stopAtFailure="false"/> 
+				 
+				
+		
+		### Create Account Page 1 ###
+  		# Test 7 invalid input: 
+  		# First Name input:  letters separated by 2 hyphens 
+  		# Last Name input:  letters separated by 2 hyphens 
+  		<testcase name="CreateAccountPage1Setup" 
+  			firstName="a--b"                          
+  			lastName="aaa--bbb"/>
+  			
+  		<testcase name="CreateAccountPage1Next"/> 	
+  		
+  		<testcase name="VerifyCreateAcountPage1Errors" 
+  			expectedErrorsCounter="2"
+  			expectedErrors="First name may only consist of letters or a hyphen between the letters.|Last name may only consist of letters or a hyphen between the letters."
+  			stopAtFailure="false"/>
+		
+		
+		
+		### Create Account Page 1 ###
+  		# Test 8 valid input: 
+  		# First Name input: 2 characters 	
+  		# Last Name input: 2 characters 
+  		###
+  		<testcase name="CreateAccountPage1Setup" 
+  			firstName="aa" 
+  			lastName="bb"/>
+  			
+  		<testcase name="CreateAccountPage1Next"/>
+  		
+  		<testcase name="CreateAccountPage2Validate"/> 	
+  		
+  		<testcase name="CreateAccountPage2GoBack" />
+  			
+  		<testcase name="VerifyCreateAcountPage1Errors" 
+  			expectedErrorsCounter="0"
+  			stopAtFailure="false"/>
+		
+		
+		
+  		### Create Account Page 1 ###
+  		# Test 9 valid input: 
+  		# First Name input: send more than 15 characters 	
+  		# Last Name input: send more than 31 characters 
+  		# Inputs are truncated at 15 and 31 characters and no error appears.
+  		###
+  		<testcase name="CreateAccountPage1Setup" 
+  			firstName="moreThanFifteenchars" 
+  			lastName="moreThanThirtyOneCharactersInput"/>
+  			
+  		<testcase name="CreateAccountPage1Next"/> 
+  		
+  		<testcase name="CreateAccountPage2Validate"/> 		
+  		
+  		<testcase name="CreateAccountPage2GoBack" />
+  			
+  		<testcase name="VerifyCreateAcountPage1Errors" 
+  			expectedErrorsCounter="0"
+  			stopAtFailure="false"/>
+  			
+  			
+  			
+  		### Create Account Page 1 ###
+  		# Test 10 valid input: 
+  		# First Name input: 2 characters separated by hyphen	
+  		# Last Name input: 2 characters separated by hyphen 
+  		###
+  		<testcase name="CreateAccountPage1Setup" 
+  			firstName="a-a" 
+  			lastName="b-b"/>
+  			
+  		<testcase name="CreateAccountPage1Next"/>
+  		
+  		<testcase name="CreateAccountPage2Validate"/> 	 	
+  		
+  		<testcase name="CreateAccountPage2GoBack" />
+  			
+  		<testcase name="VerifyCreateAcountPage1Errors" 
+  			expectedErrorsCounter="0"
+  			stopAtFailure="false"/>
+  			
+  	</test>	 	 
+  			
+ 
+ </suite>

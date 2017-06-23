@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="DemoTest" user="dan.rusu">
+ 
+################################################################################## 	
+########## DEMO TEST ########################################
+##################################################################################
+	<test name="DemoTest" 
+  			appiumServerUrl="http://0.0.0.0:4723/wd/hub"
+  			platformName="Android"
+  			deviceName="Nexus_5X"
+  			app="C:\automationWorkspace\mobile\apk\Miles More_v1.4.1_apkpure.com.apk" >
+  	
+  		<testcase name="LoginPageValidate"/>
+  	
+  		<testcase name="CreateAccount"/>
+  		
+  		### Create Account Page 1 ###
+  		<testcase name="CreateAccountPage1Validate"/>
+  		
+  		<testcase name="CreateAccountPage1Setup" 
+  			title="Mr." 
+  			academicTitle="Prof."
+  			firstName="name1" 
+  			lastName="Rusu" />
+  			
+  		<testcase name="CreateAccountPage1Next"/>
+  		
+		<testcase name="VerifyCreateAcountPage1Errors" 
+  			expectedErrorsCounter="1"
+  			expectedErrors="Invalid first name!!!"
+  			note="This test should fail :)"/>
+	</test>  
+ 	
+</suite>

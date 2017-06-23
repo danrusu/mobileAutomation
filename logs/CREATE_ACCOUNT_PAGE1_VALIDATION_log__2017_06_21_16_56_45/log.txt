@@ -1,0 +1,786 @@
+
+2017/06/21 16:56:45 | t=1 | Starting TestRunner("XML\createAccountPage1.xml", "")
+2017/06/21 16:56:45 | t=1 | Read configuration: C:\automationWorkspace\mobile/XML\createAccountPage1.xml
+2017/06/21 16:56:45 | t=1 | Test_1: {app=C:\automationWorkspace\mobile\apk\Miles More_v1.4.1_apkpure.com.apk, appiumServerUrl=http://0.0.0.0:4723/wd/hub, deviceName=Nexus_5X, name=CreateAccountPage1_InputValidation, platformName=Android}
+2017/06/21 16:56:45 | t=1 | TestCase 1_1: {name=LoginPageValidate}
+2017/06/21 16:56:45 | t=1 | TestCase 1_2: {createAccountButtonText=Create Account, name=CreateAccount, onBoardText=Don’t miss out on any awards or exclusive offers no matter where you are., onBoardTitleText=Your Overview, signInButtonText=Sign in, stopAtFailure=false}
+2017/06/21 16:56:45 | t=1 | TestCase 1_3: {name=CreateAccountPage1Validate}
+2017/06/21 16:56:45 | t=1 | TestCase 1_4: {academicTitleText=Academic Title, firstNameText=First Name, lastNameText=Last Name, name=CreateAccountPage1Setup, nextButtonText=Next, pageTitleText=Register for the Miles & More program right now and never miss another mile!, salutationTitleMrText=Mr., salutationTitleMrsText=Mrs., signInAsGuestText=Sign in as Guest, stopAtFailure=false}
+2017/06/21 16:56:45 | t=1 | TestCase 1_5: {name=CreateAccountPage1Setup}
+2017/06/21 16:56:45 | t=1 | TestCase 1_6: {name=CreateAccountPage1Next}
+2017/06/21 16:56:45 | t=1 | TestCase 1_7: {expectedErrors=Invalid first name. It can consist of 2 up to 15 characters.  First name may only consist of letters or a hyphen between the letters.|Invalid last name. It can consist of 2 up to 31 characters.  Last name may only consist of letters or a hyphen between the letters., expectedErrorsCounter=2, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:56:45 | t=1 | TestCase 1_8: {firstName=a, lastName=b, name=CreateAccountPage1Setup}
+2017/06/21 16:56:45 | t=1 | TestCase 1_9: {name=CreateAccountPage1Next}
+2017/06/21 16:56:45 | t=1 | TestCase 1_10: {expectedErrors=Invalid first name. It can consist of 2 up to 15 characters.|Invalid last name. It can consist of 2 up to 31 characters., expectedErrorsCounter=2, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:56:45 | t=1 | TestCase 1_11: {firstName=aa1, lastName=bb2, name=CreateAccountPage1Setup}
+2017/06/21 16:56:45 | t=1 | TestCase 1_12: {name=CreateAccountPage1Next}
+2017/06/21 16:56:45 | t=1 | TestCase 1_13: {expectedErrors=First name may only consist of letters or a hyphen between the letters.|Last name may only consist of letters or a hyphen between the letters., expectedErrorsCounter=2, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:56:45 | t=1 | TestCase 1_14: {firstName=!, lastName=?, name=CreateAccountPage1Setup}
+2017/06/21 16:56:45 | t=1 | TestCase 1_15: {name=CreateAccountPage1Next}
+2017/06/21 16:56:45 | t=1 | TestCase 1_16: {expectedErrors=Invalid first name. It can consist of 2 up to 15 characters.  First name may only consist of letters or a hyphen between the letters.|Invalid last name. It can consist of 2 up to 31 characters.  Last name may only consist of letters or a hyphen between the letters., expectedErrorsCounter=2, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:56:45 | t=1 | TestCase 1_17: {firstName=a--b, lastName=aaa--bbb, name=CreateAccountPage1Setup}
+2017/06/21 16:56:45 | t=1 | TestCase 1_18: {name=CreateAccountPage1Next}
+2017/06/21 16:56:45 | t=1 | TestCase 1_19: {expectedErrors=First name may only consist of letters or a hyphen between the letters.|Last name may only consist of letters or a hyphen between the letters., expectedErrorsCounter=2, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:56:45 | t=1 | TestCase 1_20: {firstName=aa, lastName=bb, name=CreateAccountPage1Setup}
+2017/06/21 16:56:45 | t=1 | TestCase 1_21: {name=CreateAccountPage1Next}
+2017/06/21 16:56:45 | t=1 | TestCase 1_22: {name=CreateAccountPage2Validate}
+2017/06/21 16:56:45 | t=1 | TestCase 1_23: {name=CreateAccountPage2GoBack}
+2017/06/21 16:56:45 | t=1 | TestCase 1_24: {expectedErrorsCounter=0, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:56:45 | t=1 | TestCase 1_25: {firstName=moreThanFifteenchars, lastName=moreThanThirtyOneCharactersInput, name=CreateAccountPage1Setup}
+2017/06/21 16:56:45 | t=1 | TestCase 1_26: {name=CreateAccountPage1Next}
+2017/06/21 16:56:45 | t=1 | TestCase 1_27: {name=CreateAccountPage2Validate}
+2017/06/21 16:56:45 | t=1 | TestCase 1_28: {name=CreateAccountPage2GoBack}
+2017/06/21 16:56:45 | t=1 | TestCase 1_29: {expectedErrorsCounter=0, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:56:45 | t=1 | TestCase 1_30: {firstName=a-a, lastName=b-b, name=CreateAccountPage1Setup}
+2017/06/21 16:56:45 | t=1 | TestCase 1_31: {name=CreateAccountPage1Next}
+2017/06/21 16:56:45 | t=1 | TestCase 1_32: {name=CreateAccountPage2Validate}
+2017/06/21 16:56:45 | t=1 | TestCase 1_33: {name=CreateAccountPage2GoBack}
+2017/06/21 16:56:45 | t=1 | TestCase 1_34: {expectedErrorsCounter=0, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:56:45 | t=1 | Starting Suite: CreateAccount_Page1_Test
+2017/06/21 16:56:45 | t=1 | ########################################################################################################################
+2017/06/21 16:56:45 | t=1 | Running test_1(1 attempts): {app=C:\automationWorkspace\mobile\apk\Miles More_v1.4.1_apkpure.com.apk, appiumServerUrl=http://0.0.0.0:4723/wd/hub, deviceName=Nexus_5X, name=CreateAccountPage1_InputValidation, platformName=Android}
+2017/06/21 16:56:45 | t=1 | ########################################################################################################################
+2017/06/21 16:56:45 | t=1 | Start driver, attempt 1
+2017/06/21 16:56:55 | t=1 | WebDriver: io.appium.java_client.android.AndroidDriver
+2017/06/21 16:56:55 | t=1 | implicit wait: 10s
+2017/06/21 16:56:55 | t=1 | Test attempt 1:
+2017/06/21 16:56:55 | t=1 | TestCases: 
+2017/06/21 16:56:55 | t=1 | test_1/testCase_1 : {name=LoginPageValidate}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_2 : {createAccountButtonText=Create Account, name=CreateAccount, onBoardText=Don’t miss out on any awards or exclusive offers no matter where you are., onBoardTitleText=Your Overview, signInButtonText=Sign in, stopAtFailure=false}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_3 : {name=CreateAccountPage1Validate}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_4 : {academicTitleText=Academic Title, firstNameText=First Name, lastNameText=Last Name, name=CreateAccountPage1Setup, nextButtonText=Next, pageTitleText=Register for the Miles & More program right now and never miss another mile!, salutationTitleMrText=Mr., salutationTitleMrsText=Mrs., signInAsGuestText=Sign in as Guest, stopAtFailure=false}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_5 : {name=CreateAccountPage1Setup}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_6 : {name=CreateAccountPage1Next}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_7 : {expectedErrors=Invalid first name. It can consist of 2 up to 15 characters.  First name may only consist of letters or a hyphen between the letters.|Invalid last name. It can consist of 2 up to 31 characters.  Last name may only consist of letters or a hyphen between the letters., expectedErrorsCounter=2, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_8 : {firstName=a, lastName=b, name=CreateAccountPage1Setup}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_9 : {name=CreateAccountPage1Next}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_10 : {expectedErrors=Invalid first name. It can consist of 2 up to 15 characters.|Invalid last name. It can consist of 2 up to 31 characters., expectedErrorsCounter=2, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_11 : {firstName=aa1, lastName=bb2, name=CreateAccountPage1Setup}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_12 : {name=CreateAccountPage1Next}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_13 : {expectedErrors=First name may only consist of letters or a hyphen between the letters.|Last name may only consist of letters or a hyphen between the letters., expectedErrorsCounter=2, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_14 : {firstName=!, lastName=?, name=CreateAccountPage1Setup}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_15 : {name=CreateAccountPage1Next}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_16 : {expectedErrors=Invalid first name. It can consist of 2 up to 15 characters.  First name may only consist of letters or a hyphen between the letters.|Invalid last name. It can consist of 2 up to 31 characters.  Last name may only consist of letters or a hyphen between the letters., expectedErrorsCounter=2, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_17 : {firstName=a--b, lastName=aaa--bbb, name=CreateAccountPage1Setup}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_18 : {name=CreateAccountPage1Next}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_19 : {expectedErrors=First name may only consist of letters or a hyphen between the letters.|Last name may only consist of letters or a hyphen between the letters., expectedErrorsCounter=2, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_20 : {firstName=aa, lastName=bb, name=CreateAccountPage1Setup}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_21 : {name=CreateAccountPage1Next}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_22 : {name=CreateAccountPage2Validate}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_23 : {name=CreateAccountPage2GoBack}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_24 : {expectedErrorsCounter=0, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_25 : {firstName=moreThanFifteenchars, lastName=moreThanThirtyOneCharactersInput, name=CreateAccountPage1Setup}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_26 : {name=CreateAccountPage1Next}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_27 : {name=CreateAccountPage2Validate}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_28 : {name=CreateAccountPage2GoBack}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_29 : {expectedErrorsCounter=0, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_30 : {firstName=a-a, lastName=b-b, name=CreateAccountPage1Setup}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_31 : {name=CreateAccountPage1Next}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_32 : {name=CreateAccountPage2Validate}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_33 : {name=CreateAccountPage2GoBack}
+2017/06/21 16:56:55 | t=1 | test_1/testCase_34 : {expectedErrorsCounter=0, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:56:55 | t=1 | ########################################################################################################################
+2017/06/21 16:56:55 | t=1 | Executing test_1/testCase_1(attempt 1/1) : {name=LoginPageValidate}
+2017/06/21 16:56:55 | t=1 | ########################################################################################################################
+2017/06/21 16:56:55 | t=1 | Wait for loading to finish for 30 seconds.
+2017/06/21 16:56:55 | t=1 | Find By.id: android:id/progress
+2017/06/21 16:56:56 | t=1 | Loading finished after 0 seconds.
+2017/06/21 16:56:56 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/logo
+2017/06/21 16:56:56 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/onboard_image
+2017/06/21 16:56:56 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/onboard_title_text
+2017/06/21 16:56:56 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/onboard_text
+2017/06/21 16:56:56 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register
+2017/06/21 16:56:57 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_login
+2017/06/21 16:56:57 | t=1 | test_1/testCase_1 succeeded !
+2017/06/21 16:56:57 | t=1 | ########################################################################################################################
+2017/06/21 16:56:57 | t=1 | Executing test_1/testCase_2(attempt 1/1) : {createAccountButtonText=Create Account, name=CreateAccount, onBoardText=Don’t miss out on any awards or exclusive offers no matter where you are., onBoardTitleText=Your Overview, signInButtonText=Sign in, stopAtFailure=false}
+2017/06/21 16:56:57 | t=1 | ########################################################################################################################
+2017/06/21 16:56:57 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/onboard_title_text
+2017/06/21 16:56:57 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/onboard_title_text
+2017/06/21 16:56:57 | t=1 | Verify On Board Text title text
+2017/06/21 16:56:57 | t=1 | expected: "Your Overview"
+2017/06/21 16:56:57 | t=1 | SUCCEEDED!
+2017/06/21 16:56:57 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/onboard_text
+2017/06/21 16:56:57 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/onboard_text
+2017/06/21 16:56:58 | t=1 | Verify On Board Text
+2017/06/21 16:56:58 | t=1 | expected: "Don’t miss out on any awards or exclusive offers no matter where you are."
+2017/06/21 16:56:58 | t=1 | SUCCEEDED!
+2017/06/21 16:56:58 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/button_register
+2017/06/21 16:56:58 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register
+2017/06/21 16:56:58 | t=1 | Verify Create Account button text
+2017/06/21 16:56:58 | t=1 | expected: "Create Account"
+2017/06/21 16:56:58 | t=1 | SUCCEEDED!
+2017/06/21 16:56:58 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/button_login
+2017/06/21 16:56:58 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_login
+2017/06/21 16:56:58 | t=1 | Verify Sign in button text
+2017/06/21 16:56:58 | t=1 | expected: "Sign in"
+2017/06/21 16:56:58 | t=1 | SUCCEEDED!
+2017/06/21 16:56:58 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register
+2017/06/21 16:56:58 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/register_info_image
+2017/06/21 16:56:59 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:56:59 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr
+2017/06/21 16:57:00 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:57:00 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs
+2017/06/21 16:57:00 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:57:00 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title_text
+2017/06/21 16:57:00 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:57:00 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:57:00 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:57:00 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:57:00 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_page_indicator
+2017/06/21 16:57:00 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/second_page_indicator
+2017/06/21 16:57:00 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/third_page_indicator
+2017/06/21 16:57:00 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:57:00 | t=1 | test_1/testCase_2 succeeded !
+2017/06/21 16:57:00 | t=1 | ########################################################################################################################
+2017/06/21 16:57:00 | t=1 | Executing test_1/testCase_3(attempt 1/1) : {name=CreateAccountPage1Validate}
+2017/06/21 16:57:00 | t=1 | ########################################################################################################################
+2017/06/21 16:57:00 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/register_info_image
+2017/06/21 16:57:00 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title_text
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_page_indicator
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/second_page_indicator
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/third_page_indicator
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:57:01 | t=1 | test_1/testCase_3 succeeded !
+2017/06/21 16:57:01 | t=1 | ########################################################################################################################
+2017/06/21 16:57:01 | t=1 | Executing test_1/testCase_4(attempt 1/1) : {academicTitleText=Academic Title, firstNameText=First Name, lastNameText=Last Name, name=CreateAccountPage1Setup, nextButtonText=Next, pageTitleText=Register for the Miles & More program right now and never miss another mile!, salutationTitleMrText=Mr., salutationTitleMrsText=Mrs., signInAsGuestText=Sign in as Guest, stopAtFailure=false}
+2017/06/21 16:57:01 | t=1 | ########################################################################################################################
+2017/06/21 16:57:01 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/title_text
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/title_text
+2017/06/21 16:57:01 | t=1 | Verify Page title text
+2017/06/21 16:57:01 | t=1 | expected: "Register for the Miles & More program right now and never miss another mile!"
+2017/06/21 16:57:01 | t=1 | SUCCEEDED!
+2017/06/21 16:57:01 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:57:01 | t=1 | Verify Salutation title Mr text
+2017/06/21 16:57:01 | t=1 | expected: "Mr."
+2017/06/21 16:57:01 | t=1 | SUCCEEDED!
+2017/06/21 16:57:01 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:57:01 | t=1 | Verify Salutation title Mrs text
+2017/06/21 16:57:01 | t=1 | expected: "Mrs."
+2017/06/21 16:57:01 | t=1 | SUCCEEDED!
+2017/06/21 16:57:01 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:57:01 | t=1 | Verify Academic title text
+2017/06/21 16:57:01 | t=1 | expected: "Academic Title"
+2017/06/21 16:57:01 | t=1 | SUCCEEDED!
+2017/06/21 16:57:01 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:57:01 | t=1 | Verify First name text
+2017/06/21 16:57:01 | t=1 | expected: "First Name"
+2017/06/21 16:57:01 | t=1 | SUCCEEDED!
+2017/06/21 16:57:01 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:57:01 | t=1 | Verify Last name text
+2017/06/21 16:57:01 | t=1 | expected: "Last Name"
+2017/06/21 16:57:01 | t=1 | SUCCEEDED!
+2017/06/21 16:57:01 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/sign_in_guest_text
+2017/06/21 16:57:01 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/sign_in_guest_text
+2017/06/21 16:57:02 | t=1 | Verify Sign in as guest text
+2017/06/21 16:57:02 | t=1 | expected: "Sign in as Guest"
+2017/06/21 16:57:02 | t=1 | SUCCEEDED!
+2017/06/21 16:57:02 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:57:02 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:57:02 | t=1 | Verify Next button text
+2017/06/21 16:57:02 | t=1 | expected: "Next"
+2017/06/21 16:57:02 | t=1 | SUCCEEDED!
+2017/06/21 16:57:02 | t=1 | test_1/testCase_4 succeeded !
+2017/06/21 16:57:02 | t=1 | ########################################################################################################################
+2017/06/21 16:57:02 | t=1 | Executing test_1/testCase_5(attempt 1/1) : {name=CreateAccountPage1Setup}
+2017/06/21 16:57:02 | t=1 | ########################################################################################################################
+2017/06/21 16:57:02 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/title_text
+2017/06/21 16:57:02 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/title_text
+2017/06/21 16:57:02 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:57:02 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:57:02 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:57:02 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:57:02 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:57:02 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:57:02 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:57:02 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:57:02 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:57:02 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:57:02 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/sign_in_guest_text
+2017/06/21 16:57:02 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/sign_in_guest_text
+2017/06/21 16:57:02 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:57:02 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:57:02 | t=1 | test_1/testCase_5 succeeded !
+2017/06/21 16:57:02 | t=1 | ########################################################################################################################
+2017/06/21 16:57:02 | t=1 | Executing test_1/testCase_6(attempt 1/1) : {name=CreateAccountPage1Next}
+2017/06/21 16:57:02 | t=1 | ########################################################################################################################
+2017/06/21 16:57:02 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:57:05 | t=1 | test_1/testCase_6 succeeded !
+2017/06/21 16:57:05 | t=1 | ########################################################################################################################
+2017/06/21 16:57:05 | t=1 | Executing test_1/testCase_7(attempt 1/1) : {expectedErrors=Invalid first name. It can consist of 2 up to 15 characters.  First name may only consist of letters or a hyphen between the letters.|Invalid last name. It can consist of 2 up to 31 characters.  Last name may only consist of letters or a hyphen between the letters., expectedErrorsCounter=2, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:57:05 | t=1 | ########################################################################################################################
+2017/06/21 16:57:05 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/first_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:57:05 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:57:05 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/first_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:57:05 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:57:05 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/last_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:57:05 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:57:05 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/last_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:57:05 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:57:05 | t=1 | Assertion: Verify error counter: expected= 2; found=2 - SUCCEEDED!
+2017/06/21 16:57:05 | t=1 | Expected errors: [Invalid first name. It can consist of 2 up to 15 characters.  First name may only consist of letters or a hyphen between the letters., Invalid last name. It can consist of 2 up to 31 characters.  Last name may only consist of letters or a hyphen between the letters.]
+2017/06/21 16:57:05 | t=1 | Current errors: [Invalid first name. It can consist of 2 up to 15 characters.  First name may only consist of letters or a hyphen between the letters., Invalid last name. It can consist of 2 up to 31 characters.  Last name may only consist of letters or a hyphen between the letters.]
+2017/06/21 16:57:05 | t=1 | Assertion: Verify Error "[Invalid first name. It can consist of 2 up to 15 characters.  First name may only consist of letters or a hyphen between the letters., Invalid last name. It can consist of 2 up to 31 characters.  Last name may only consist of letters or a hyphen between the letters.]" is displayed - SUCCEEDED!
+2017/06/21 16:57:06 | t=1 | Assertion: Verify Error "[Invalid first name. It can consist of 2 up to 15 characters.  First name may only consist of letters or a hyphen between the letters., Invalid last name. It can consist of 2 up to 31 characters.  Last name may only consist of letters or a hyphen between the letters.]" is displayed - SUCCEEDED!
+2017/06/21 16:57:06 | t=1 | test_1/testCase_7 succeeded !
+2017/06/21 16:57:06 | t=1 | ########################################################################################################################
+2017/06/21 16:57:06 | t=1 | Executing test_1/testCase_8(attempt 1/1) : {firstName=a, lastName=b, name=CreateAccountPage1Setup}
+2017/06/21 16:57:06 | t=1 | ########################################################################################################################
+2017/06/21 16:57:06 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/title_text
+2017/06/21 16:57:06 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/title_text
+2017/06/21 16:57:06 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:57:06 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:57:06 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:57:06 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:57:06 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:57:06 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:57:06 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:57:06 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:57:06 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:57:06 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:57:06 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/sign_in_guest_text
+2017/06/21 16:57:06 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/sign_in_guest_text
+2017/06/21 16:57:06 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:57:06 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:57:06 | t=1 | Clear + Send text "a" to By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:57:06 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:57:14 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:57:14 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:57:14 | t=1 | Verify First Name
+2017/06/21 16:57:14 | t=1 | expected: "a"
+2017/06/21 16:57:14 | t=1 | SUCCEEDED!
+2017/06/21 16:57:15 | t=1 | Clear + Send text "b" to By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:57:15 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:57:22 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:57:22 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:57:23 | t=1 | Verify Last Name
+2017/06/21 16:57:23 | t=1 | expected: "b"
+2017/06/21 16:57:23 | t=1 | SUCCEEDED!
+2017/06/21 16:57:24 | t=1 | test_1/testCase_8 succeeded !
+2017/06/21 16:57:24 | t=1 | ########################################################################################################################
+2017/06/21 16:57:24 | t=1 | Executing test_1/testCase_9(attempt 1/1) : {name=CreateAccountPage1Next}
+2017/06/21 16:57:24 | t=1 | ########################################################################################################################
+2017/06/21 16:57:24 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:57:26 | t=1 | test_1/testCase_9 succeeded !
+2017/06/21 16:57:26 | t=1 | ########################################################################################################################
+2017/06/21 16:57:26 | t=1 | Executing test_1/testCase_10(attempt 1/1) : {expectedErrors=Invalid first name. It can consist of 2 up to 15 characters.|Invalid last name. It can consist of 2 up to 31 characters., expectedErrorsCounter=2, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:57:26 | t=1 | ########################################################################################################################
+2017/06/21 16:57:26 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/first_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:57:26 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:57:26 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/first_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:57:26 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:57:26 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/last_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:57:26 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:57:27 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/last_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:57:27 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:57:27 | t=1 | Assertion: Verify error counter: expected= 2; found=2 - SUCCEEDED!
+2017/06/21 16:57:27 | t=1 | Expected errors: [Invalid first name. It can consist of 2 up to 15 characters., Invalid last name. It can consist of 2 up to 31 characters.]
+2017/06/21 16:57:27 | t=1 | Current errors: [Invalid first name. It can consist of 2 up to 15 characters., Invalid last name. It can consist of 2 up to 31 characters.]
+2017/06/21 16:57:27 | t=1 | Assertion: Verify Error "[Invalid first name. It can consist of 2 up to 15 characters., Invalid last name. It can consist of 2 up to 31 characters.]" is displayed - SUCCEEDED!
+2017/06/21 16:57:27 | t=1 | Assertion: Verify Error "[Invalid first name. It can consist of 2 up to 15 characters., Invalid last name. It can consist of 2 up to 31 characters.]" is displayed - SUCCEEDED!
+2017/06/21 16:57:27 | t=1 | test_1/testCase_10 succeeded !
+2017/06/21 16:57:27 | t=1 | ########################################################################################################################
+2017/06/21 16:57:27 | t=1 | Executing test_1/testCase_11(attempt 1/1) : {firstName=aa1, lastName=bb2, name=CreateAccountPage1Setup}
+2017/06/21 16:57:27 | t=1 | ########################################################################################################################
+2017/06/21 16:57:27 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/title_text
+2017/06/21 16:57:27 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/title_text
+2017/06/21 16:57:27 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:57:27 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:57:27 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:57:27 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:57:27 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:57:27 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:57:27 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:57:27 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:57:27 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:57:27 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:57:27 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/sign_in_guest_text
+2017/06/21 16:57:27 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/sign_in_guest_text
+2017/06/21 16:57:28 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:57:28 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:57:28 | t=1 | Clear + Send text "aa1" to By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:57:28 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:57:35 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:57:35 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:57:36 | t=1 | Verify First Name
+2017/06/21 16:57:36 | t=1 | expected: "aa1"
+2017/06/21 16:57:36 | t=1 | SUCCEEDED!
+2017/06/21 16:57:37 | t=1 | Clear + Send text "bb2" to By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:57:37 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:57:43 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:57:43 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:57:44 | t=1 | Verify Last Name
+2017/06/21 16:57:44 | t=1 | expected: "bb2"
+2017/06/21 16:57:44 | t=1 | SUCCEEDED!
+2017/06/21 16:57:45 | t=1 | test_1/testCase_11 succeeded !
+2017/06/21 16:57:45 | t=1 | ########################################################################################################################
+2017/06/21 16:57:45 | t=1 | Executing test_1/testCase_12(attempt 1/1) : {name=CreateAccountPage1Next}
+2017/06/21 16:57:45 | t=1 | ########################################################################################################################
+2017/06/21 16:57:45 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:57:47 | t=1 | test_1/testCase_12 succeeded !
+2017/06/21 16:57:47 | t=1 | ########################################################################################################################
+2017/06/21 16:57:47 | t=1 | Executing test_1/testCase_13(attempt 1/1) : {expectedErrors=First name may only consist of letters or a hyphen between the letters.|Last name may only consist of letters or a hyphen between the letters., expectedErrorsCounter=2, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:57:47 | t=1 | ########################################################################################################################
+2017/06/21 16:57:47 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/first_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:57:47 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:57:47 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/first_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:57:47 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:57:47 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/last_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:57:47 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:57:47 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/last_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:57:47 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:57:47 | t=1 | Assertion: Verify error counter: expected= 2; found=2 - SUCCEEDED!
+2017/06/21 16:57:48 | t=1 | Expected errors: [First name may only consist of letters or a hyphen between the letters., Last name may only consist of letters or a hyphen between the letters.]
+2017/06/21 16:57:48 | t=1 | Current errors: [First name may only consist of letters or a hyphen between the letters., Last name may only consist of letters or a hyphen between the letters.]
+2017/06/21 16:57:48 | t=1 | Assertion: Verify Error "[First name may only consist of letters or a hyphen between the letters., Last name may only consist of letters or a hyphen between the letters.]" is displayed - SUCCEEDED!
+2017/06/21 16:57:48 | t=1 | Assertion: Verify Error "[First name may only consist of letters or a hyphen between the letters., Last name may only consist of letters or a hyphen between the letters.]" is displayed - SUCCEEDED!
+2017/06/21 16:57:48 | t=1 | test_1/testCase_13 succeeded !
+2017/06/21 16:57:48 | t=1 | ########################################################################################################################
+2017/06/21 16:57:48 | t=1 | Executing test_1/testCase_14(attempt 1/1) : {firstName=!, lastName=?, name=CreateAccountPage1Setup}
+2017/06/21 16:57:48 | t=1 | ########################################################################################################################
+2017/06/21 16:57:48 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/title_text
+2017/06/21 16:57:48 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/title_text
+2017/06/21 16:57:48 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:57:48 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:57:48 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:57:48 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:57:48 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:57:48 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:57:48 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:57:48 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:57:48 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:57:48 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:57:48 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/sign_in_guest_text
+2017/06/21 16:57:48 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/sign_in_guest_text
+2017/06/21 16:57:48 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:57:48 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:57:48 | t=1 | Clear + Send text "!" to By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:57:48 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:57:56 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:57:56 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:57:56 | t=1 | Verify First Name
+2017/06/21 16:57:56 | t=1 | expected: "!"
+2017/06/21 16:57:56 | t=1 | SUCCEEDED!
+2017/06/21 16:57:57 | t=1 | Clear + Send text "?" to By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:57:57 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:58:04 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:58:04 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:58:05 | t=1 | Verify Last Name
+2017/06/21 16:58:05 | t=1 | expected: "?"
+2017/06/21 16:58:05 | t=1 | SUCCEEDED!
+2017/06/21 16:58:06 | t=1 | test_1/testCase_14 succeeded !
+2017/06/21 16:58:06 | t=1 | ########################################################################################################################
+2017/06/21 16:58:06 | t=1 | Executing test_1/testCase_15(attempt 1/1) : {name=CreateAccountPage1Next}
+2017/06/21 16:58:06 | t=1 | ########################################################################################################################
+2017/06/21 16:58:06 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:58:08 | t=1 | test_1/testCase_15 succeeded !
+2017/06/21 16:58:08 | t=1 | ########################################################################################################################
+2017/06/21 16:58:08 | t=1 | Executing test_1/testCase_16(attempt 1/1) : {expectedErrors=Invalid first name. It can consist of 2 up to 15 characters.  First name may only consist of letters or a hyphen between the letters.|Invalid last name. It can consist of 2 up to 31 characters.  Last name may only consist of letters or a hyphen between the letters., expectedErrorsCounter=2, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:58:08 | t=1 | ########################################################################################################################
+2017/06/21 16:58:08 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/first_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:58:08 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:58:08 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/first_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:58:08 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:58:08 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/last_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:58:08 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:58:08 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/last_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:58:08 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:58:09 | t=1 | Assertion: Verify error counter: expected= 2; found=2 - SUCCEEDED!
+2017/06/21 16:58:09 | t=1 | Expected errors: [Invalid first name. It can consist of 2 up to 15 characters.  First name may only consist of letters or a hyphen between the letters., Invalid last name. It can consist of 2 up to 31 characters.  Last name may only consist of letters or a hyphen between the letters.]
+2017/06/21 16:58:09 | t=1 | Current errors: [Invalid first name. It can consist of 2 up to 15 characters.  First name may only consist of letters or a hyphen between the letters., Invalid last name. It can consist of 2 up to 31 characters.  Last name may only consist of letters or a hyphen between the letters.]
+2017/06/21 16:58:09 | t=1 | Assertion: Verify Error "[Invalid first name. It can consist of 2 up to 15 characters.  First name may only consist of letters or a hyphen between the letters., Invalid last name. It can consist of 2 up to 31 characters.  Last name may only consist of letters or a hyphen between the letters.]" is displayed - SUCCEEDED!
+2017/06/21 16:58:09 | t=1 | Assertion: Verify Error "[Invalid first name. It can consist of 2 up to 15 characters.  First name may only consist of letters or a hyphen between the letters., Invalid last name. It can consist of 2 up to 31 characters.  Last name may only consist of letters or a hyphen between the letters.]" is displayed - SUCCEEDED!
+2017/06/21 16:58:09 | t=1 | test_1/testCase_16 succeeded !
+2017/06/21 16:58:09 | t=1 | ########################################################################################################################
+2017/06/21 16:58:09 | t=1 | Executing test_1/testCase_17(attempt 1/1) : {firstName=a--b, lastName=aaa--bbb, name=CreateAccountPage1Setup}
+2017/06/21 16:58:09 | t=1 | ########################################################################################################################
+2017/06/21 16:58:09 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/title_text
+2017/06/21 16:58:09 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/title_text
+2017/06/21 16:58:09 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:58:09 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:58:09 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:58:09 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:58:09 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:58:09 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:58:09 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:58:09 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:58:09 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:58:09 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:58:09 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/sign_in_guest_text
+2017/06/21 16:58:09 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/sign_in_guest_text
+2017/06/21 16:58:09 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:58:09 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:58:10 | t=1 | Clear + Send text "a--b" to By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:58:10 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:58:18 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:58:18 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:58:18 | t=1 | Verify First Name
+2017/06/21 16:58:18 | t=1 | expected: "a--b"
+2017/06/21 16:58:18 | t=1 | SUCCEEDED!
+2017/06/21 16:58:19 | t=1 | Clear + Send text "aaa--bbb" to By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:58:19 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:58:26 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:58:26 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:58:26 | t=1 | Verify Last Name
+2017/06/21 16:58:26 | t=1 | expected: "aaa--bbb"
+2017/06/21 16:58:26 | t=1 | SUCCEEDED!
+2017/06/21 16:58:27 | t=1 | test_1/testCase_17 succeeded !
+2017/06/21 16:58:27 | t=1 | ########################################################################################################################
+2017/06/21 16:58:27 | t=1 | Executing test_1/testCase_18(attempt 1/1) : {name=CreateAccountPage1Next}
+2017/06/21 16:58:27 | t=1 | ########################################################################################################################
+2017/06/21 16:58:27 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:58:30 | t=1 | test_1/testCase_18 succeeded !
+2017/06/21 16:58:30 | t=1 | ########################################################################################################################
+2017/06/21 16:58:30 | t=1 | Executing test_1/testCase_19(attempt 1/1) : {expectedErrors=First name may only consist of letters or a hyphen between the letters.|Last name may only consist of letters or a hyphen between the letters., expectedErrorsCounter=2, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:58:30 | t=1 | ########################################################################################################################
+2017/06/21 16:58:30 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/first_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:58:30 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:58:30 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/first_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:58:30 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:58:30 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/last_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:58:30 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:58:31 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/last_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:58:31 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:58:31 | t=1 | Assertion: Verify error counter: expected= 2; found=2 - SUCCEEDED!
+2017/06/21 16:58:31 | t=1 | Expected errors: [First name may only consist of letters or a hyphen between the letters., Last name may only consist of letters or a hyphen between the letters.]
+2017/06/21 16:58:31 | t=1 | Current errors: [First name may only consist of letters or a hyphen between the letters., Last name may only consist of letters or a hyphen between the letters.]
+2017/06/21 16:58:31 | t=1 | Assertion: Verify Error "[First name may only consist of letters or a hyphen between the letters., Last name may only consist of letters or a hyphen between the letters.]" is displayed - SUCCEEDED!
+2017/06/21 16:58:31 | t=1 | Assertion: Verify Error "[First name may only consist of letters or a hyphen between the letters., Last name may only consist of letters or a hyphen between the letters.]" is displayed - SUCCEEDED!
+2017/06/21 16:58:31 | t=1 | test_1/testCase_19 succeeded !
+2017/06/21 16:58:31 | t=1 | ########################################################################################################################
+2017/06/21 16:58:31 | t=1 | Executing test_1/testCase_20(attempt 1/1) : {firstName=aa, lastName=bb, name=CreateAccountPage1Setup}
+2017/06/21 16:58:31 | t=1 | ########################################################################################################################
+2017/06/21 16:58:31 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/title_text
+2017/06/21 16:58:31 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/title_text
+2017/06/21 16:58:31 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:58:31 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:58:31 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:58:31 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:58:31 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:58:31 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:58:31 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:58:31 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:58:31 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:58:31 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:58:31 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/sign_in_guest_text
+2017/06/21 16:58:31 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/sign_in_guest_text
+2017/06/21 16:58:31 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:58:31 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:58:31 | t=1 | Clear + Send text "aa" to By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:58:31 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:58:39 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:58:39 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:58:40 | t=1 | Verify First Name
+2017/06/21 16:58:40 | t=1 | expected: "aa"
+2017/06/21 16:58:40 | t=1 | SUCCEEDED!
+2017/06/21 16:58:41 | t=1 | Clear + Send text "bb" to By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:58:41 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:58:49 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:58:49 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:58:49 | t=1 | Verify Last Name
+2017/06/21 16:58:49 | t=1 | expected: "bb"
+2017/06/21 16:58:49 | t=1 | SUCCEEDED!
+2017/06/21 16:58:50 | t=1 | test_1/testCase_20 succeeded !
+2017/06/21 16:58:50 | t=1 | ########################################################################################################################
+2017/06/21 16:58:50 | t=1 | Executing test_1/testCase_21(attempt 1/1) : {name=CreateAccountPage1Next}
+2017/06/21 16:58:50 | t=1 | ########################################################################################################################
+2017/06/21 16:58:50 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:58:52 | t=1 | test_1/testCase_21 succeeded !
+2017/06/21 16:58:52 | t=1 | ########################################################################################################################
+2017/06/21 16:58:52 | t=1 | Executing test_1/testCase_22(attempt 1/1) : {name=CreateAccountPage2Validate}
+2017/06/21 16:58:52 | t=1 | ########################################################################################################################
+2017/06/21 16:58:52 | t=1 | Find By.xpath: //*[@resource-id='com.plannet.milesandmoreapp:id/register_info_image']/preceding-sibling::android.widget.ImageView
+2017/06/21 16:58:52 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/register_info_image
+2017/06/21 16:58:52 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/birth_date
+2017/06/21 16:58:53 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/birth_date_text
+2017/06/21 16:58:53 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/street_adress
+2017/06/21 16:58:53 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/street_adress_text
+2017/06/21 16:58:53 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/zip_code
+2017/06/21 16:58:53 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/zip_code_text
+2017/06/21 16:58:53 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/city
+2017/06/21 16:58:53 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/city_text
+2017/06/21 16:58:53 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/country
+2017/06/21 16:58:53 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_page_indicator
+2017/06/21 16:58:53 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/second_page_indicator
+2017/06/21 16:58:53 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/third_page_indicator
+2017/06/21 16:58:53 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:58:53 | t=1 | test_1/testCase_22 succeeded !
+2017/06/21 16:58:53 | t=1 | ########################################################################################################################
+2017/06/21 16:58:53 | t=1 | Executing test_1/testCase_23(attempt 1/1) : {name=CreateAccountPage2GoBack}
+2017/06/21 16:58:53 | t=1 | ########################################################################################################################
+2017/06/21 16:58:53 | t=1 | Click By.xpath: //*[@resource-id='com.plannet.milesandmoreapp:id/register_info_image']/preceding-sibling::android.widget.ImageView
+2017/06/21 16:58:53 | t=1 | Find By.xpath: //*[@resource-id='com.plannet.milesandmoreapp:id/register_info_image']/preceding-sibling::android.widget.ImageView
+2017/06/21 16:58:53 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/register_info_image
+2017/06/21 16:58:54 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:58:54 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr
+2017/06/21 16:58:54 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:58:54 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs
+2017/06/21 16:58:54 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:58:54 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title_text
+2017/06/21 16:58:54 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:58:55 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:58:55 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:58:55 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:58:55 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_page_indicator
+2017/06/21 16:58:55 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/second_page_indicator
+2017/06/21 16:58:55 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/third_page_indicator
+2017/06/21 16:58:55 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:58:55 | t=1 | test_1/testCase_23 succeeded !
+2017/06/21 16:58:55 | t=1 | ########################################################################################################################
+2017/06/21 16:58:55 | t=1 | Executing test_1/testCase_24(attempt 1/1) : {expectedErrorsCounter=0, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:58:55 | t=1 | ########################################################################################################################
+2017/06/21 16:58:55 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/first_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:58:55 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:58:56 | t=1 | Error not found in By.id: com.plannet.milesandmoreapp:id/first_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:58:56 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/last_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:58:56 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:58:56 | t=1 | Error not found in By.id: com.plannet.milesandmoreapp:id/last_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:58:56 | t=1 | Assertion: Verify error counter: expected= 0; found=0 - SUCCEEDED!
+2017/06/21 16:58:56 | t=1 | Expected errors: []
+2017/06/21 16:58:56 | t=1 | Current errors: []
+2017/06/21 16:58:56 | t=1 | test_1/testCase_24 succeeded !
+2017/06/21 16:58:56 | t=1 | ########################################################################################################################
+2017/06/21 16:58:56 | t=1 | Executing test_1/testCase_25(attempt 1/1) : {firstName=moreThanFifteenchars, lastName=moreThanThirtyOneCharactersInput, name=CreateAccountPage1Setup}
+2017/06/21 16:58:56 | t=1 | ########################################################################################################################
+2017/06/21 16:58:56 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/title_text
+2017/06/21 16:58:56 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/title_text
+2017/06/21 16:58:56 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:58:56 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:58:56 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:58:56 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:58:56 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:58:56 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:58:56 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:58:56 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:58:56 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:58:56 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:58:56 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/sign_in_guest_text
+2017/06/21 16:58:56 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/sign_in_guest_text
+2017/06/21 16:58:56 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:58:56 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:58:57 | t=1 | Clear + Send text "moreThanFifteenchars" to By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:58:57 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:59:04 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:59:04 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:59:04 | t=1 | Verify First Name
+2017/06/21 16:59:04 | t=1 | expected: "moreThanFifteen"
+2017/06/21 16:59:04 | t=1 | SUCCEEDED!
+2017/06/21 16:59:06 | t=1 | Clear + Send text "moreThanThirtyOneCharactersInput" to By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:59:06 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:59:14 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:59:14 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:59:14 | t=1 | Verify Last Name
+2017/06/21 16:59:14 | t=1 | expected: "moreThanThirtyOneCharactersInpu"
+2017/06/21 16:59:14 | t=1 | SUCCEEDED!
+2017/06/21 16:59:15 | t=1 | test_1/testCase_25 succeeded !
+2017/06/21 16:59:15 | t=1 | ########################################################################################################################
+2017/06/21 16:59:15 | t=1 | Executing test_1/testCase_26(attempt 1/1) : {name=CreateAccountPage1Next}
+2017/06/21 16:59:15 | t=1 | ########################################################################################################################
+2017/06/21 16:59:15 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:59:17 | t=1 | test_1/testCase_26 succeeded !
+2017/06/21 16:59:17 | t=1 | ########################################################################################################################
+2017/06/21 16:59:17 | t=1 | Executing test_1/testCase_27(attempt 1/1) : {name=CreateAccountPage2Validate}
+2017/06/21 16:59:17 | t=1 | ########################################################################################################################
+2017/06/21 16:59:17 | t=1 | Find By.xpath: //*[@resource-id='com.plannet.milesandmoreapp:id/register_info_image']/preceding-sibling::android.widget.ImageView
+2017/06/21 16:59:17 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/register_info_image
+2017/06/21 16:59:17 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/birth_date
+2017/06/21 16:59:17 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/birth_date_text
+2017/06/21 16:59:17 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/street_adress
+2017/06/21 16:59:17 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/street_adress_text
+2017/06/21 16:59:18 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/zip_code
+2017/06/21 16:59:18 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/zip_code_text
+2017/06/21 16:59:18 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/city
+2017/06/21 16:59:18 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/city_text
+2017/06/21 16:59:18 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/country
+2017/06/21 16:59:18 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_page_indicator
+2017/06/21 16:59:18 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/second_page_indicator
+2017/06/21 16:59:18 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/third_page_indicator
+2017/06/21 16:59:18 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:59:18 | t=1 | test_1/testCase_27 succeeded !
+2017/06/21 16:59:18 | t=1 | ########################################################################################################################
+2017/06/21 16:59:18 | t=1 | Executing test_1/testCase_28(attempt 1/1) : {name=CreateAccountPage2GoBack}
+2017/06/21 16:59:18 | t=1 | ########################################################################################################################
+2017/06/21 16:59:18 | t=1 | Click By.xpath: //*[@resource-id='com.plannet.milesandmoreapp:id/register_info_image']/preceding-sibling::android.widget.ImageView
+2017/06/21 16:59:18 | t=1 | Find By.xpath: //*[@resource-id='com.plannet.milesandmoreapp:id/register_info_image']/preceding-sibling::android.widget.ImageView
+2017/06/21 16:59:18 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/register_info_image
+2017/06/21 16:59:19 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:59:19 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr
+2017/06/21 16:59:19 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:59:19 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs
+2017/06/21 16:59:19 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:59:19 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title_text
+2017/06/21 16:59:20 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:59:20 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:59:20 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:59:20 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:59:20 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_page_indicator
+2017/06/21 16:59:20 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/second_page_indicator
+2017/06/21 16:59:20 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/third_page_indicator
+2017/06/21 16:59:20 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:59:20 | t=1 | test_1/testCase_28 succeeded !
+2017/06/21 16:59:20 | t=1 | ########################################################################################################################
+2017/06/21 16:59:20 | t=1 | Executing test_1/testCase_29(attempt 1/1) : {expectedErrorsCounter=0, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:59:20 | t=1 | ########################################################################################################################
+2017/06/21 16:59:20 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/first_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:59:20 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:59:20 | t=1 | Error not found in By.id: com.plannet.milesandmoreapp:id/first_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:59:20 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/last_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:59:20 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:59:21 | t=1 | Error not found in By.id: com.plannet.milesandmoreapp:id/last_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:59:21 | t=1 | Assertion: Verify error counter: expected= 0; found=0 - SUCCEEDED!
+2017/06/21 16:59:21 | t=1 | Expected errors: []
+2017/06/21 16:59:21 | t=1 | Current errors: []
+2017/06/21 16:59:21 | t=1 | test_1/testCase_29 succeeded !
+2017/06/21 16:59:21 | t=1 | ########################################################################################################################
+2017/06/21 16:59:21 | t=1 | Executing test_1/testCase_30(attempt 1/1) : {firstName=a-a, lastName=b-b, name=CreateAccountPage1Setup}
+2017/06/21 16:59:21 | t=1 | ########################################################################################################################
+2017/06/21 16:59:21 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/title_text
+2017/06/21 16:59:21 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/title_text
+2017/06/21 16:59:21 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:59:21 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:59:21 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:59:21 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:59:21 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:59:21 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:59:21 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:59:21 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:59:21 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:59:21 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:59:21 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/sign_in_guest_text
+2017/06/21 16:59:21 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/sign_in_guest_text
+2017/06/21 16:59:21 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:59:21 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:59:21 | t=1 | Clear + Send text "a-a" to By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:59:21 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:59:29 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:59:29 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:59:29 | t=1 | Verify First Name
+2017/06/21 16:59:29 | t=1 | expected: "a-a"
+2017/06/21 16:59:29 | t=1 | SUCCEEDED!
+2017/06/21 16:59:30 | t=1 | Clear + Send text "b-b" to By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:59:30 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:59:38 | t=1 | Get text from By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:59:38 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:59:38 | t=1 | Verify Last Name
+2017/06/21 16:59:38 | t=1 | expected: "b-b"
+2017/06/21 16:59:38 | t=1 | SUCCEEDED!
+2017/06/21 16:59:39 | t=1 | test_1/testCase_30 succeeded !
+2017/06/21 16:59:39 | t=1 | ########################################################################################################################
+2017/06/21 16:59:39 | t=1 | Executing test_1/testCase_31(attempt 1/1) : {name=CreateAccountPage1Next}
+2017/06/21 16:59:39 | t=1 | ########################################################################################################################
+2017/06/21 16:59:39 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:59:41 | t=1 | test_1/testCase_31 succeeded !
+2017/06/21 16:59:41 | t=1 | ########################################################################################################################
+2017/06/21 16:59:41 | t=1 | Executing test_1/testCase_32(attempt 1/1) : {name=CreateAccountPage2Validate}
+2017/06/21 16:59:41 | t=1 | ########################################################################################################################
+2017/06/21 16:59:41 | t=1 | Find By.xpath: //*[@resource-id='com.plannet.milesandmoreapp:id/register_info_image']/preceding-sibling::android.widget.ImageView
+2017/06/21 16:59:41 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/register_info_image
+2017/06/21 16:59:41 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/birth_date
+2017/06/21 16:59:42 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/birth_date_text
+2017/06/21 16:59:42 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/street_adress
+2017/06/21 16:59:42 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/street_adress_text
+2017/06/21 16:59:42 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/zip_code
+2017/06/21 16:59:42 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/zip_code_text
+2017/06/21 16:59:42 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/city
+2017/06/21 16:59:42 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/city_text
+2017/06/21 16:59:42 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/country
+2017/06/21 16:59:42 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_page_indicator
+2017/06/21 16:59:42 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/second_page_indicator
+2017/06/21 16:59:42 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/third_page_indicator
+2017/06/21 16:59:42 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:59:42 | t=1 | test_1/testCase_32 succeeded !
+2017/06/21 16:59:42 | t=1 | ########################################################################################################################
+2017/06/21 16:59:42 | t=1 | Executing test_1/testCase_33(attempt 1/1) : {name=CreateAccountPage2GoBack}
+2017/06/21 16:59:42 | t=1 | ########################################################################################################################
+2017/06/21 16:59:42 | t=1 | Click By.xpath: //*[@resource-id='com.plannet.milesandmoreapp:id/register_info_image']/preceding-sibling::android.widget.ImageView
+2017/06/21 16:59:42 | t=1 | Find By.xpath: //*[@resource-id='com.plannet.milesandmoreapp:id/register_info_image']/preceding-sibling::android.widget.ImageView
+2017/06/21 16:59:42 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/register_info_image
+2017/06/21 16:59:43 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr_text
+2017/06/21 16:59:43 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mr
+2017/06/21 16:59:43 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs_text
+2017/06/21 16:59:43 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/salutation_mrs
+2017/06/21 16:59:43 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title
+2017/06/21 16:59:43 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/academic_title_text
+2017/06/21 16:59:44 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:59:44 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name_text
+2017/06/21 16:59:44 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:59:44 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name_text
+2017/06/21 16:59:44 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_page_indicator
+2017/06/21 16:59:44 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/second_page_indicator
+2017/06/21 16:59:44 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/third_page_indicator
+2017/06/21 16:59:44 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/button_register_next
+2017/06/21 16:59:44 | t=1 | test_1/testCase_33 succeeded !
+2017/06/21 16:59:44 | t=1 | ########################################################################################################################
+2017/06/21 16:59:44 | t=1 | Executing test_1/testCase_34(attempt 1/1) : {expectedErrorsCounter=0, name=VerifyCreateAcountPage1Errors, stopAtFailure=false}
+2017/06/21 16:59:44 | t=1 | ########################################################################################################################
+2017/06/21 16:59:44 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/first_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:59:44 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/first_name
+2017/06/21 16:59:44 | t=1 | Error not found in By.id: com.plannet.milesandmoreapp:id/first_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:59:44 | t=1 | Find error in By.id: com.plannet.milesandmoreapp:id/last_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:59:44 | t=1 | Find By.id: com.plannet.milesandmoreapp:id/last_name
+2017/06/21 16:59:45 | t=1 | Error not found in By.id: com.plannet.milesandmoreapp:id/last_name->By.id: com.plannet.milesandmoreapp:id/textinput_error
+2017/06/21 16:59:45 | t=1 | Assertion: Verify error counter: expected= 0; found=0 - SUCCEEDED!
+2017/06/21 16:59:45 | t=1 | Expected errors: []
+2017/06/21 16:59:45 | t=1 | Current errors: []
+2017/06/21 16:59:45 | t=1 | test_1/testCase_34 succeeded !
+2017/06/21 16:59:45 | t=1 | test_1 succeeded!
+2017/06/21 16:59:45 | t=1 | Test finished; quit current driver.
+2017/06/21 16:59:46 | t=1 | ########################################################################################################################
+2017/06/21 16:59:46 | t=1 | Total           | Elapsed              | Succeeded                      | Failed          | Crashed         | 
+2017/06/21 16:59:46 | t=1 | 1               | 0h:3m:0s:832ms       | 1                              | 0               | 0               |
+2017/06/21 16:59:46 | t=1 | ########################################################################################################################
+2017/06/21 16:59:46 | t=1 | Test[/TestCase] | Elapsed              | Name                                     | Result          | Details        
+2017/06/21 16:59:46 | t=1 | 1               | 0h:2m:59s:110ms      | CreateAccountPage1_InputValidation       | TestPass        | {app=C:\automationWorkspace\mobile\apk\Miles More_v1.4.1_apkpure.com.apk, appiumServerUrl=http://0.0.0.0:4723/wd/hub, deviceName=Nexus_5X, platformName=Android}
+2017/06/21 16:59:46 | t=1 | 1/1             | 0h:0m:2s:89ms        | LoginPageValidate                        | TestCasePass    | {}           
+2017/06/21 16:59:46 | t=1 | 1/2             | 0h:0m:3s:429ms       | CreateAccount                            | TestCasePass    | {createAccountButtonText=Create Account, onBoardText=Don’t miss out on any awards or exclusive offers no matter where you are., onBoardTitleText=Your Overview, signInButtonText=Sign in, stopAtFailure=false}
+2017/06/21 16:59:46 | t=1 | 1/3             | 0h:0m:0s:534ms       | CreateAccountPage1Validate               | TestCasePass    | {}           
+2017/06/21 16:59:46 | t=1 | 1/4             | 0h:0m:0s:652ms       | CreateAccountPage1Setup                  | TestCasePass    | {academicTitleText=Academic Title, firstNameText=First Name, lastNameText=Last Name, nextButtonText=Next, pageTitleText=Register for the Miles & More program right now and never miss another mile!, salutationTitleMrText=Mr., salutationTitleMrsText=Mrs., signInAsGuestText=Sign in as Guest, stopAtFailure=false}
+2017/06/21 16:59:46 | t=1 | 1/5             | 0h:0m:0s:680ms       | CreateAccountPage1Setup                  | TestCasePass    | {}           
+2017/06/21 16:59:46 | t=1 | 1/6             | 0h:0m:2s:226ms       | CreateAccountPage1Next                   | TestCasePass    | {}           
+2017/06/21 16:59:46 | t=1 | 1/7             | 0h:0m:0s:959ms       | VerifyCreateAcountPage1Errors            | TestCasePass    | {expectedErrors=Invalid first name. It can consist of 2 up to 15 characters.  First name may only consist of letters or a hyphen between the letters.|Invalid last name. It can consist of 2 up to 31 characters.  Last name may only consist of letters or a hyphen between the letters., expectedErrorsCounter=2, stopAtFailure=false}
+2017/06/21 16:59:46 | t=1 | 1/8             | 0h:0m:18s:58ms       | CreateAccountPage1Setup                  | TestCasePass    | {firstName=a, lastName=b}
+2017/06/21 16:59:46 | t=1 | 1/9             | 0h:0m:2s:292ms       | CreateAccountPage1Next                   | TestCasePass    | {}           
+2017/06/21 16:59:46 | t=1 | 1/10            | 0h:0m:0s:978ms       | VerifyCreateAcountPage1Errors            | TestCasePass    | {expectedErrors=Invalid first name. It can consist of 2 up to 15 characters.|Invalid last name. It can consist of 2 up to 31 characters., expectedErrorsCounter=2, stopAtFailure=false}
+2017/06/21 16:59:46 | t=1 | 1/11            | 0h:0m:17s:717ms      | CreateAccountPage1Setup                  | TestCasePass    | {firstName=aa1, lastName=bb2}
+2017/06/21 16:59:46 | t=1 | 1/12            | 0h:0m:2s:252ms       | CreateAccountPage1Next                   | TestCasePass    | {}           
+2017/06/21 16:59:46 | t=1 | 1/13            | 0h:0m:0s:696ms       | VerifyCreateAcountPage1Errors            | TestCasePass    | {expectedErrors=First name may only consist of letters or a hyphen between the letters.|Last name may only consist of letters or a hyphen between the letters., expectedErrorsCounter=2, stopAtFailure=false}
+2017/06/21 16:59:46 | t=1 | 1/14            | 0h:0m:18s:28ms       | CreateAccountPage1Setup                  | TestCasePass    | {firstName=!, lastName=?}
+2017/06/21 16:59:46 | t=1 | 1/15            | 0h:0m:2s:260ms       | CreateAccountPage1Next                   | TestCasePass    | {}           
+2017/06/21 16:59:46 | t=1 | 1/16            | 0h:0m:0s:829ms       | VerifyCreateAcountPage1Errors            | TestCasePass    | {expectedErrors=Invalid first name. It can consist of 2 up to 15 characters.  First name may only consist of letters or a hyphen between the letters.|Invalid last name. It can consist of 2 up to 31 characters.  Last name may only consist of letters or a hyphen between the letters., expectedErrorsCounter=2, stopAtFailure=false}
+2017/06/21 16:59:46 | t=1 | 1/17            | 0h:0m:18s:806ms      | CreateAccountPage1Setup                  | TestCasePass    | {firstName=a--b, lastName=aaa--bbb}
+2017/06/21 16:59:46 | t=1 | 1/18            | 0h:0m:2s:277ms       | CreateAccountPage1Next                   | TestCasePass    | {}           
+2017/06/21 16:59:46 | t=1 | 1/19            | 0h:0m:1s:0ms         | VerifyCreateAcountPage1Errors            | TestCasePass    | {expectedErrors=First name may only consist of letters or a hyphen between the letters.|Last name may only consist of letters or a hyphen between the letters., expectedErrorsCounter=2, stopAtFailure=false}
+2017/06/21 16:59:46 | t=1 | 1/20            | 0h:0m:19s:364ms      | CreateAccountPage1Setup                  | TestCasePass    | {firstName=aa, lastName=bb}
+2017/06/21 16:59:46 | t=1 | 1/21            | 0h:0m:2s:288ms       | CreateAccountPage1Next                   | TestCasePass    | {}           
+2017/06/21 16:59:46 | t=1 | 1/22            | 0h:0m:0s:819ms       | CreateAccountPage2Validate               | TestCasePass    | {}           
+2017/06/21 16:59:46 | t=1 | 1/23            | 0h:0m:2s:18ms        | CreateAccountPage2GoBack                 | TestCasePass    | {}           
+2017/06/21 16:59:46 | t=1 | 1/24            | 0h:0m:0s:690ms       | VerifyCreateAcountPage1Errors            | TestCasePass    | {expectedErrorsCounter=0, stopAtFailure=false}
+2017/06/21 16:59:46 | t=1 | 1/25            | 0h:0m:18s:942ms      | CreateAccountPage1Setup                  | TestCasePass    | {firstName=moreThanFifteenchars, lastName=moreThanThirtyOneCharactersInput}
+2017/06/21 16:59:46 | t=1 | 1/26            | 0h:0m:2s:270ms       | CreateAccountPage1Next                   | TestCasePass    | {}           
+2017/06/21 16:59:46 | t=1 | 1/27            | 0h:0m:0s:795ms       | CreateAccountPage2Validate               | TestCasePass    | {}           
+2017/06/21 16:59:46 | t=1 | 1/28            | 0h:0m:2s:135ms       | CreateAccountPage2GoBack                 | TestCasePass    | {}           
+2017/06/21 16:59:46 | t=1 | 1/29            | 0h:0m:0s:595ms       | VerifyCreateAcountPage1Errors            | TestCasePass    | {expectedErrorsCounter=0, stopAtFailure=false}
+2017/06/21 16:59:46 | t=1 | 1/30            | 0h:0m:18s:486ms      | CreateAccountPage1Setup                  | TestCasePass    | {firstName=a-a, lastName=b-b}
+2017/06/21 16:59:46 | t=1 | 1/31            | 0h:0m:2s:262ms       | CreateAccountPage1Next                   | TestCasePass    | {}           
+2017/06/21 16:59:46 | t=1 | 1/32            | 0h:0m:0s:555ms       | CreateAccountPage2Validate               | TestCasePass    | {}           
+2017/06/21 16:59:46 | t=1 | 1/33            | 0h:0m:2s:99ms        | CreateAccountPage2GoBack                 | TestCasePass    | {}           
+2017/06/21 16:59:46 | t=1 | 1/34            | 0h:0m:0s:533ms       | VerifyCreateAcountPage1Errors            | TestCasePass    | {expectedErrorsCounter=0, stopAtFailure=false}
+2017/06/21 16:59:46 | t=1 | ########################################################################################################################
+2017/06/21 16:59:46 | t=1 | Save result to: C:\automationWorkspace\mobile\logs\log__2017_06_21_16_56_45\result.html
+2017/06/21 16:59:46 | t=1 | Test Suite Finished!
+2017/06/21 16:59:46 | t=1 | Log: C:\automationWorkspace\mobile\logs\log__2017_06_21_16_56_45\log.txt
+2017/06/21 16:59:46 | t=1 | Report: C:\automationWorkspace\mobile\logs\log__2017_06_21_16_56_45\result.html

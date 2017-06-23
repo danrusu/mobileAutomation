@@ -1,0 +1,236 @@
+/****************************************************************************/
+/* Some responsive settings */
+@media screen and (max-width: 1500px){
+  #results th:nth-of-type(3),
+  #results td:nth-of-type(3),
+  #results th:nth-of-type(7),
+  #results td:nth-of-type(7),
+  #results th:nth-of-type(8),
+  #results td:nth-of-type(8),
+  
+  #resultsFilters td:nth-of-type(3),
+  #resultsFilters td:nth-of-type(8),
+  #resultsFilters td:nth-of-type(9){
+     display: none;
+  }
+}
+
+
+@media screen and (max-width: 1100px){
+  #results th:nth-of-type(5),
+  #results td:nth-of-type(5),
+  #resultsFilters td:nth-of-type(5){
+     display: none;
+  }
+}
+
+@media screen and (max-width: 650px){
+  #results th,
+  #results td{
+    display: block;
+  }
+  
+  #results th,
+  #results td{
+    width: 100%;
+	text-align: center;
+  }
+  
+  #results td{
+    background-color: #FFFFFF;
+  }
+  
+  
+  #results td:last-child{
+    border-bottom: 4px solid #0868a1;
+  }
+
+}
+
+
+/**********JENKINS****************************************************************/
+@media screen and (max-width: 1200px){
+  .mainCell {
+	  display: block;
+  }
+  table#jenkinsMainContainer tr:first-of-type .mainCell:nth-of-type(2){
+	  display: none;
+  }
+  
+  
+  table#jenkinsMainContainer td.mainCell{
+	width: 100%;
+	padding: 10px 0px;
+}
+
+@media screen and (max-width: 750px){
+  .jenkins th:nth-of-type(4),
+  .jenkins td:nth-of-type(4){
+     display: none;
+   }
+   
+   table#eFlow td span,
+   table#pmt td span{
+	 padding-left: 1px;
+   }
+}
+
+@media screen and (max-width: 650px){
+  .jenkins th:nth-of-type(3),
+  .jenkins td:nth-of-type(3){
+     display: none;
+   }
+   
+   table#eFlow td,
+   table#pmt td{
+	   padding: 0px 0px;
+   }
+   
+}
+
+@media screen and (max-width: 450px){
+  .jenkins th:nth-of-type(5),
+  .jenkins td:nth-of-type(5){
+     display: none;
+   }
+}
+@media screen and (max-width: 600px){
+
+  #jenkinsConfigureDropdown{
+    display: block;
+    text-align: center;
+  }
+  #jenkinsConfigureDropdown ul{
+    float: none;
+    position: static;
+    width: 100px;
+    margin: 0 auto;
+  }
+  
+
+}
+
+
+
+/**********NAVIGATOR****************************************************************/
+@media screen and (max-width: 600px){
+  nav a{
+     width: 100%;
+     display:  block;
+     text-align: center;
+   }
+}
+
+
+/****************************************************************************/
+
+
+/**********Results details****************************************************************/
+@media screen and (max-width: 1150px){
+  body > table th:nth-of-type(1),
+  body > table td:nth-of-type(1),
+  body > table th:nth-of-type(3),
+  body > table td:nth-of-type(3){
+     display:  none;
+  }
+
+  #suiteResultsContainer th:nth-of-type(4),
+  #suiteResultsContainer td:nth-of-type(4),
+  #suiteResultsContainer th:nth-of-type(5),
+  #suiteResultsContainer td:nth-of-type(5),
+  #suiteResultsContainer th:nth-of-type(6),
+  #suiteResultsContainer td:nth-of-type(6),
+  #suiteResultsContainer th:nth-of-type(7),
+  #suiteResultsContainer td:nth-of-type(7){
+    display: none;
+  }
+}
+
+/* Modules ****************************************/
+@media screen and (max-width: 1150px){
+
+  #testCasesDocs td{
+     display: block;
+     width: 100%;
+  } 
+
+
+  #modulesFilter{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+  }
+  #content ul{
+    float: none;
+    position: static;
+    width: 100px;
+    margin: 0 auto;
+  }
+
+
+}
+
+
+@media screen and (max-width: 600px){
+
+  #modulesFilter{
+    display: block;
+    text-align: center;
+  }
+  #content ul{
+    float: none;
+    position: static;
+    width: 100px;
+    margin: 0 auto;
+  }
+
+}
+
+@media screen and (max-width: 450px){
+  #modulesActions{
+	  width: 100%;
+  }
+	
+  #modulesActions td{
+	display: block;
+	text-align: center;
+	width: 100%;
+	padding: 5px 0px;
+	
+  }	
+  
+
+  
+  .download td:first-of-type,
+  .download td:last-of-type{
+	display:none;
+  }  
+
+
+
+   
+}
+
+/*
+@media screen and (max-width: 750px){
+  #suiteResultsContainer th,
+  #suiteResultsContainer td{
+    display: block;
+  }
+
+  body > table td{
+    background-color: #FFFFFF;
+    width: 100%;
+  }
+    
+
+  body > table th,
+  body > table td{
+    display: block;
+  }
+  body > table td:last-child{
+    border-bottom: 4px solid #0868a1;
+  }
+
+}
+*/

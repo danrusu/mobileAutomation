@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="CreateAccountTest_CompleteValidFlow" user="dan.rusu">
+ 
+################################################################################## 	
+########## END TO END CREATE ACCOUNT TEST ########################################
+##################################################################################
+	<test name="CreateAccount__AllSettings_SuccesfullTest" 
+  			appiumServerUrl="http://0.0.0.0:4723/wd/hub"
+  			platformName="Android"
+  			deviceName="Nexus_5X"
+  			app="C:\automationWorkspace\mobile\apk\Miles More_v1.4.1_apkpure.com.apk" >
+  	
+  		<testcase name="LoginPageValidate"/>
+  	
+  		<testcase name="CreateAccount"/>
+				
+		
+  		### Create Account Page 1 ###
+		<testcase name="CreateAccountPage1Validate"/>
+		## Verify static text
+  		<testcase name="CreateAccountPage1Setup" 
+  			pageTitleText="Register for the Miles &amp; More program right now and never miss another mile!"
+  			salutationTitleMrText="Mr."
+	  		salutationTitleMrsText="Mrs."
+		  	academicTitleText="Academic Title"
+		  	firstNameText="First Name"
+		 	lastNameText="Last Name"
+		  	signInAsGuestText="Sign in as Guest"
+		  	nextButtonText="Next"
+		  	
+		  	stopAtFailure="false"
+			note="Verify page static text."/>
+  		
+  		
+  		<testcase name="CreateAccountPage1Setup" 
+  			title="Mrs." 
+  			academicTitle="Prof."
+  			firstName="Dorina" 
+  			lastName="Rusu" />
+  			
+  		<testcase name="CreateAccountPage1Next"/>
+  			
+
+  		### Create Account Page 2 ###
+		<testcase name="CreateAccountPage2Validate"/>
+		## Verify static text
+  		<testcase name="CreateAccountPage2Setup"
+  			birthDateText="Birth date"
+			streetAddressText="Street + number"
+			zipCodeText="Zip code"
+			cityText="City"
+			countryText="Country"
+			nextButtonText="Next"
+			stopOnFailure="false"
+			
+			note="Verify page static text."/>
+		
+	   	<testcase name="CreateAccountPage2Setup"	
+  			birthDate="09/April/1983" 
+  			streetAddress="str. XXX 19D" 
+  			zipCode="75008" 
+  			city="Paris" 
+  			country="France"/> 
+  			
+  		<testcase name="CreateAccountPage2Next"/> 
+  		
+  		
+  		### Create Account Page 3 ###
+		<testcase name="CreateAccountPage3Validate"/>
+		## Verify static text
+  		<testcase name="CreateAccountPage3Setup"
+  			pageTitleText="CREATE ACCOUNT"
+			usernameText="Username"
+			passwordVerticalBarText="Password |"
+			newPasswordText="Password"
+			confirmPasswordText="Confirm password"
+			emailText="E-mail"
+			temporaryCardNumberText="Temporary card number"
+			createAccountButtonText="Create Account"
+			registerTermConditionsText="I have read the Miles &amp; More Terms and Conditions and agree with them."
+			
+			note="Verify page static text."/> 
+  		
+  		<testcase name="CreateAccountPage3Setup"
+  			userName="newUser1"
+  			showPassword="true"
+  			newPassword="a3nhnkXS#"
+  			confirmPassword="a3nhnkXS#"
+  			email="danginkgo@yahoo.com"
+  			termsRegisterSwitch="true"/> 
+  			
+  		<testcase name="CreateAccountPage3CreateAccount"/>
+  		
+  		### Not a Robot page
+  		<testcase name="NotARobotValidate"/>
+  		
+  		<testcase name="NotARobotCancel" />
+  		
+  		<testcase name="CreateAccountPage3Validate"/>
+  		
+  		<testcase name="VerifyCreateAcountPage3Errors" 
+  			expectedErrorsCounter="0"/>
+	</test>  
+ 	
+</suite>

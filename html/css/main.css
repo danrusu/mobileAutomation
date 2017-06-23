@@ -1,0 +1,454 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/*
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers 
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+***************************************************** FINISHED RESET ******************************************************/
+/***** Colors *****/
+/* table cells */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+img {
+  border: none;
+}
+img.runningImg {
+  padding-right: 5px;
+}
+.navbar-header a:first-child {
+  pointer-events: none;
+}
+/* results details ********************************************/
+table.results td:last-of-type div {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding: 5px 5px 5px 5px;
+}
+.failure {
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+  background-color: #fff;
+  border: 1px solid red;
+}
+.js_errors {
+  border: 1px dotted indianred;
+  color: indianred;
+  background-color: #fff;
+  word-wrap: break-word;
+  max-width: 800;
+  margin: auto;
+}
+.note {
+  color: blue;
+  font-style: italic;
+  background-color: #f2f2f2;
+  border: 1px dotted #0000ff;
+}
+/* Test case docs within the html result Details */
+div.testCaseDocs {
+  display: none;
+  background-color: #68e3a6;
+  padding: 5px 5px 5px 5px;
+  border: 1px dotted #dc143c;
+}
+/*********************************************/
+div#testCasesDocs {
+  font-size: 0.9em;
+}
+#container {
+  min-height: 98%;
+  position: relative;
+}
+#header {
+  text-align: center;
+  background: #ff0;
+  padding: 10px;
+}
+#content {
+  /* padding:20px; */
+}
+#footer {
+  padding-top: 25px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+footer table {
+  margin: 0 auto;
+}
+footer td:first-of-type,
+footer td:last-of-type {
+  padding: 0px 0px 3px 0px;
+}
+body,
+label,
+button,
+a,
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+body {
+  position: relative;
+  /* For scrollyspy */
+  background: white;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: subpixel-antialiased;
+}
+#suiteResultsContainer {
+  background-color: #0868a1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  padding: 0px;
+  width: 100%;
+}
+table.suiteResults {
+  width: 100%;
+}
+table.suiteResults th {
+  color: #FFF;
+  font-size: 0.8em;
+  font-family: Arial;
+  text-align: center;
+  padding: 4px 30px 5px 30px;
+}
+table.suiteResults td {
+  color: #FFF;
+  font-size: 0.8em;
+  text-align: center;
+  padding: 4px 30px 5px 30px;
+}
+table.results {
+  width: 100%;
+  text-align: center;
+}
+table.results td,
+table.results th {
+  width: 10%;
+}
+table.results td:nth-child(2),
+table.results th:nth-child(2) {
+  width: 20%;
+  min-width: 20%;
+}
+table.results td:last-of-type span:last-of-type {
+  padding-left: 10px;
+}
+table.results td:last-of-type span:hover {
+  cursor: pointer;
+}
+table.download {
+  margin: 0 auto;
+  width: 100%;
+}
+table.download b {
+  color: #26cf7a;
+  font-size: 1em;
+}
+table.download tr:first-of-type td:first-of-type {
+  font-weight: bold;
+  font-size: 0.9em;
+}
+table.download tr:first-of-type td {
+  border-top: 2px solid #26cf7a;
+}
+table.download tr:last-of-type td {
+  border-bottom: 2px solid #26cf7a;
+}
+table.download tr td {
+  border-bottom: 1px solid #26cf7a;
+  width: 25%;
+}
+table.download td {
+  font-size: 0.8em;
+  text-align: center;
+  padding: 4px 10px 5px 10px;
+}
+table.download td:nth-of-type(3) {
+  border-left: 1px dotted #26cf7a;
+}
+table.download td {
+  font-family: Verdana, sans-serif;
+  padding: 10px;
+}
+table.results td,
+table.jenkins td {
+  font-size: 0.8em;
+  text-align: center;
+  border: 1px solid #ffffff;
+  padding: 2px;
+}
+/* Test Cases Documents */
+table.testCasesDocs td:nth-child(1) {
+  color: #0868a1;
+  font-weight: bold;
+}
+table.testCasesDocs {
+  width: 100%;
+}
+/*
+table.testCasesDocs td{
+  max-width: 800px;
+  word-wrap: break-word;
+}
+*/
+table.testCasesDocs tr td:first-child {
+  width: 30%;
+}
+table.testCasesDocs tr td:last-child {
+  width: 70%;
+}
+table.download tr:nth-child(odd) td {
+  background: #ffffff;
+}
+table.download tr:nth-child(even) td {
+  background: #f2f2f2;
+}
+table.results tr:nth-child(even) td,
+table.testCasesDocs tr:nth-child(odd) td,
+table.jenkins tr:nth-child(even) td {
+  background: #f8f8ff;
+}
+table.results tr:nth-child(odd) td,
+table.jenkins tr:nth-child(odd) td {
+  background: #e6e6e6;
+}
+table#results tr:last-child td {
+  background: #0868a1;
+  padding-top: 2px;
+}
+table.results th,
+table.jenkins th {
+  background-color: #0868a1;
+  border: 1px solid #ffffff;
+  font-size: 0.8em;
+  color: #ffffff;
+  text-align: center;
+  padding: 4px 20px 5px 20px;
+}
+.pressedNav {
+  background: #4682b4;
+}
+table.testCasesDocs {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  text-align: left;
+}
+table.testCasesDocs tr {
+  border-bottom: 1px solid #0868a1;
+  border-collapse: collapse;
+}
+table.testCasesDocs td {
+  padding: 10px 10px 10px 10px;
+}
+table.testCasesDocs td.testCasesDocsName {
+  font-size: 0.8em;
+}
+#resultsFilters table {
+  text-align: center;
+  margin: 0 auto;
+  color: #0868a1;
+  font-weight: bold;
+  width: 100%;
+}
+#resultsFilters table td {
+  width: 10%;
+  text-align: center;
+  border: 1px solid #ffffff;
+}
+#resultsFilters td:nth-child(2) {
+  width: 20%;
+}
+#resultsFilters input {
+  width: 100%;
+  color: #0868a1;
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.8em;
+}
+input#resultsLimit {
+  color: #ff0000;
+}
+.filterInfo {
+  font-size: 0.8em;
+}
+#resultsCounter {
+  font-size: 0.8em;
+  width: 100%;
+  color: #ff0000;
+  text-align: center;
+  border: 1px dotted #0868a1;
+  padding: 5px 0px 3px 5px;
+}
+body > table td:nth-child(1),
+body > table td:nth-child(3),
+body > table td:nth-child(4) {
+  width: 10%;
+}
+body > table td:nth-child(2) {
+  width: 20%;
+}
+body > table td:nth-child(5) {
+  width: 50%;
+}
+body > table td,
+body > table th {
+  border: none;
+}
+div.button {
+  border: 2px solid green;
+  padding: 5px;
+  margin: 5px;
+  width: 150px;
+  display: inline-block;
+}
+svg {
+  vertical-align: middle;
+}
+.svg24:hover path {
+  fill: darkorange;
+}
+.ib {
+  display: inline-block;
+}
+/* JENKINS **********/
+table#jenkinsMainContainer {
+  width: 98%;
+  text-align: center;
+  margin-left: 1%;
+}
+table#jenkinsMainContainer td {
+  width: 50%;
+  padding: 0px 10px;
+  vertical-align: top;
+}
+table#eFlow td span,
+table#pmt td span {
+  padding-left: 3px;
+}
+table#eFlow td:first-of-type:hover,
+table#pmt td:first-of-type:hover {
+  cursor: pointer;
+}
+#jenkinsConfigureDropdown {
+  width: 100%;
+  margin: 0 auto;
+}
+table#pmt {
+  width: 100%;
+  border: 2px solid #0868a1;
+}
+table#pmt td,
+table#eFlow td {
+  vertical-align: middle;
+}
+table#eFlow {
+  width: 100%;
+  border: 2px solid #0868a1;
+}
+table#eFlow tr:first-of-type th {
+  font-size: 1.3em;
+  padding: 10px 0px;
+}
+table#pmt tr:first-of-type th {
+  font-size: 1.3em;
+  padding: 10px 0px;
+}
+#jenkinsMainContainer tr:first-of-type td:first-of-type {
+  text-align: left;
+}
+table#eFlow td,
+table#pmt td {
+  width: 15%;
+  padding: 5px;
+}
+table#eFlow td:nth-of-type(1),
+table#pmt td:nth-of-type(1) {
+  width: 40%;
+}
+th[class$=Project] {
+  cursor: pointer;
+}
+/* END JENKINS **********/
+.eFlowProject {
+  background: crimson;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(right, crimson, #0868a1);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(left, crimson, #0868a1);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(left, crimson, #0868a1);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to left, crimson, #0868a1);
+  /* Standard syntax (must be last) */
+}
+.pmtProject {
+  background: #26cf7a;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(right, #26cf7a, #0868a1);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(left, #26cf7a, #0868a1);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(left, #26cf7a, #0868a1);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #26cf7a, #0868a1);
+  /* Standard syntax (must be last) */
+}
+#modulesCounter {
+  border: 1px dotted orange;
+  padding: 6px 10px 3px 10px;
+  color: orange;
+  font-weight: bold;
+  margin: 0px 0px 0px 15px;
+}
+#modulesActions td:last-of-type {
+  padding-left: 10px;
+}
