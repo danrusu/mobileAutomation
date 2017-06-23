@@ -6,4 +6,4 @@ Detailed project description:     docs/_README_milesAndMore.pdf
 
 Available screen cast demos:      docs/demo.mp4
 
-All code is under GNU GENERAL PUBLIC LICENSE Version 3.
+All code is under GNU General Public License v3.0.
