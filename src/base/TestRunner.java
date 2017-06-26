@@ -24,7 +24,7 @@ import base.xml.XmlTestConfig;
 
 
 /**
- * Class for running tests from a TestConfig
+ * Class for running tests from a configuration XML file.
  * 
  * @author Dan.Rusu
  */
@@ -71,7 +71,7 @@ public class TestRunner {
 	}
 
 	/**
-	 * Constructor - used also for non Jenkins runs
+	 * Constructor - used for non Jenkins runs
 	 * 
 	 * @param xmlTestFile
 	 */
@@ -248,7 +248,13 @@ public class TestRunner {
 		elapsedSuiteTime = TimeUtils.getElapsedTime(startSuiteTime);
 		//String testResult = (totalTests == succeededTests) ? "Succeeded" : "Failed";
 
-		results.log(testResultInfo, totalTests, succeededTests, failedTests, crashedTests, elapsedSuiteTime);
+		results.log(testResultInfo, 
+			totalTests, 
+			succeededTests, 
+			failedTests, 
+			crashedTests, 
+			elapsedSuiteTime);
+			
 		saveLocalResult(resultFilePath.toString());
 
 		logger.log("Test Suite Finished!");
