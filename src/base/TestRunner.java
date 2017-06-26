@@ -24,7 +24,7 @@ import base.xml.XmlTestConfig;
 
 
 /**
- * Class for running tests from a TestConfig.
+ * Class for running tests from a TestConfig
  * 
  * @author Dan.Rusu
  */
