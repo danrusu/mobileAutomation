@@ -2,6 +2,8 @@ package base;
 
 public class Assert{
 
+	
+	
 	/**
 	 * Assertion check - log message before it throws.
 	 * 
@@ -17,6 +19,7 @@ public class Assert{
 			throw new AssertionError(errorMessage);
 		}
 	}
+	
 	
 	
 	public static void assertTrue(boolean isSuccessful, 
@@ -40,11 +43,14 @@ public class Assert{
 	}
 
 
+	
 	public static void fail(String message){
 		Logger.getLogger().logLines("Assertion: " + message + " - FAILED!");
 		throw new AssertionError(message);
 	}
 
+	
+	
 	public static void fail(){
 		throw new AssertionError();
 	}

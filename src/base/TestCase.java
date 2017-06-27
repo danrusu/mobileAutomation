@@ -20,18 +20,35 @@ import base.xml.XmlDynamicData;
  * @author Dan Rusu
  *
  */
+/**
+ * @author dan.rusu
+ *
+ */
+/**
+ * @author dan.rusu
+ *
+ */
+/**
+ * @author dan.rusu
+ *
+ */
+/**
+ * @author dan.rusu
+ *
+ */
+/**
+ * @author dan.rusu
+ *
+ */
 abstract public class TestCase implements Runnable, TestCaseScenario{	
 	public Logger logger;
 	public WebDriver driver = null;
 	public static WebDriver currentDriver = null;
+	
 	private boolean internalTest;
-
-
 	private String startWindowHandle;
 
-
 	private DynamicCheck dc;
-
 	private Map<String, String> testCaseAttributes;
 
 
@@ -46,6 +63,7 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 		this.driver = Driver.driver;
 	}
 
+	
 
 	/**
 	 * Constructor 
@@ -57,6 +75,8 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 		dc = new DynamicCheck(logger);
 	}
 
+	
+	
 	/**
 	 * Close all opened browser windows; kill driver.   
 	 * 
@@ -87,14 +107,13 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 
 
 
-
-
 	// Get an instance for dynamic waits 
 	public DynamicCheck getDynamicCheck() {
 		return dc;
 	}
 
 
+	
 	public boolean checkPageTitle(String title, 
 			long totalMilisTimeout,
 			long stepTimeout){
@@ -160,6 +179,10 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 
 
 
+	/**
+	 * @param test
+	 * @param testAttributes
+	 */
 	public void runInternalTestCase(TestCase test,
 			Map<String, String> testAttributes){
 
@@ -169,26 +192,31 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 
 
 
-
-
-
-
-
-
-
-
+	/**
+	 * Set test cases' first window handle.
+	 * 
+	 * @param startWindowHandle - fist window opened
+	 */
 	public void setStartWindowHandle(String startWindowHandle) {
 		this.startWindowHandle = startWindowHandle;
 	}
 
+	
 
+	
+	/**
+	 * Dynamic evaluation of the XML attributes.
+	 * - save data
+	 * - evaluate global variables
+	 * 
+	 * @param testCaseAttributes - test case (attributeName, attributeValus) map
+	 */
 	public void dynamicEval(Map<String, String> testCaseAttributes) {
 		//Map<String, String> attributes = testCaseAttributes;
 
 		// eval "save" first
 		String save = evalAttribute("save");
 		saveAll(save);
-
 
 
 		testCaseAttributes.keySet().forEach(
@@ -205,9 +233,7 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 							logger.log("Attribute replaced: " + key + "=" + newValue);
 						}
 					}
-				}
-				);
-
+				});
 	}
 
 
@@ -290,6 +316,7 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 	}
 
 	
+	
 	public void addFailure(Throwable th) {
 		logger.logLines( TestCaseFailure.stackToString(th) );
 		//testCase.addAttribute("failure", th.getMessage());
@@ -308,11 +335,14 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 		return TestConfig.nullToEmptyString(s);
 	}
 
+	
 
 	public String evalAttribute(String attribute){
 		//return nullToEmptyString(getTestCaseAttributes().get(attribute));
 		return getTestCaseAttributes().get(attribute);
 	}
+	
+	
 	
 	public boolean isAvailable(Object attributeField){
 		if ( attributeField == null ){
@@ -320,15 +350,16 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 		}
 		else {
 			return true;
-		}
-		
+		}	
 	}
 
+	
 	
 	public Boolean evalBooleanAttribute(String attribute){
 		return nullToEmptyString(getTestCaseAttributes().get(attribute)).equalsIgnoreCase("true");
 	}
 
+	
 
 	public void assertStaticText(Object staticTextField, 
 			String currentText,
@@ -342,7 +373,4 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 		}
 	}
 
-	public void goBack() {
-		driver.navigate().back();
-	}
 }

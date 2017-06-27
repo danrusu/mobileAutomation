@@ -151,4 +151,11 @@ public class Driver {
 				speed);
 		ThreadUtils.sleepQuiet(2000);
 	}
+	
+	
+	
+	
+	public static void goBack() {
+		driver.navigate().back();
+	}
 }

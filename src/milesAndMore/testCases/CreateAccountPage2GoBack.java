@@ -8,6 +8,7 @@ import milesAndMore.pages.CreateAccountPage2;
 
 public class CreateAccountPage2GoBack extends TestCase{
 
+	
 	@Override
 	public void run() {
 			
@@ -15,12 +16,11 @@ public class CreateAccountPage2GoBack extends TestCase{
 			
 	}
 
+	
+	
 	@Override
 	public String getTestCaseScenario() {
 		return "Press Back Arrow button on Create Account page 2.";
 	}
-
-
-	
 
 }

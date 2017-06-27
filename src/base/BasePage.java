@@ -23,16 +23,19 @@ public abstract class BasePage implements PageValidation{
 	private final String milesPrefix = "com.plannet.milesandmoreapp:id/";
 
 
+	
 	public BasePage(AndroidDriver<?> driver) {
 		this.driver = driver;
 	}
 
 
+	
 	public String prefixed(String text){
 		return milesPrefix + text; 
 	}
 
 
+	
 	public String maxChars(String text, int max){
 		if (text.length()<=max){
 			return text;
@@ -42,6 +45,7 @@ public abstract class BasePage implements PageValidation{
 		}
 	}
 
+	
 
 	public WebElement findElement(By by){
 		logger.log("Find " + by);
@@ -50,6 +54,7 @@ public abstract class BasePage implements PageValidation{
 	}
 
 
+	
 	public void findElements(List<By> locators){
 		for (By locator : locators){
 			findElement(locator);
@@ -99,12 +104,14 @@ public abstract class BasePage implements PageValidation{
 				currentText);
 	}
 
+	
 
 	public String getText(By by) {
 		logger.log("Get text from " + by);
 		return findElement(by).getText().trim();
 	}
 
+	
 
 	public void assertIsChecked(By by, boolean expectedState, String detailsMessage){
 		boolean isChecked = isChecked(by);
@@ -150,6 +157,7 @@ public abstract class BasePage implements PageValidation{
 	}
 
 
+	
 	protected String getError(By by){
 		String error = new String();
 		try{
@@ -167,6 +175,7 @@ public abstract class BasePage implements PageValidation{
 	}
 
 
+	
 	protected List<String> getErrors(List<By> elementsThatCanHaveErrors){
 		List<String> errorsList = new ArrayList<>();
 		for (By by: elementsThatCanHaveErrors){
@@ -177,6 +186,7 @@ public abstract class BasePage implements PageValidation{
 		return errorsList;
 	}
 
+	
 
 	// Other pages will override this input text errors can appear on the page.
 	// This is not abstract to provide a template.
@@ -185,15 +195,18 @@ public abstract class BasePage implements PageValidation{
 	}
 
 
+	
 	public String getErrorsNumber(){
 		return Integer.toString(getAllErrors().size());
 	}
 
 
+	
 	public boolean isErrorState(){
 		return getErrorsNumber().equals("0");
 	}
 
+	
 
 	public void closeKeyboard() {
 		logger.log("Navigate back");
@@ -201,6 +214,7 @@ public abstract class BasePage implements PageValidation{
 	}
 
 
+	
 	public void waitForLoading(long timeoutInSeconds){
 		boolean loaded = false;
 		logger.log("Wait for loading to finish for " + timeoutInSeconds + " seconds.");
@@ -222,6 +236,5 @@ public abstract class BasePage implements PageValidation{
 		}
 
 	}
-	
 
 }
