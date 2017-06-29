@@ -39,11 +39,14 @@ public class Driver {
 			String deviceName,
 			String app){
 		
+		
+		
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		// move this to the configuration XML
 		capabilities.setCapability("platformName", platformName);
 		capabilities.setCapability("deviceName", deviceName);
 		capabilities.setCapability("app", app);
+		
+		
 
 		try {
 			driver = new AndroidDriver<>(new URL(appiumServerUrl), capabilities);

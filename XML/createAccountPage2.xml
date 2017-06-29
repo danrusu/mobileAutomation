@@ -5,11 +5,12 @@
 ################################################################################## 	
 ########## PAGE 2 INPUT VALIDATION ###############################################
 ##################################################################################
-    <test name="CreateAccountPage2_InputValidation" 
+	<test name="DemoTest" 
   			appiumServerUrl="http://0.0.0.0:4723/wd/hub"
   			platformName="Android"
-  			deviceName="Nexus_5X"
-  			app="C:\automationWorkspace\milesAndMore\apk\Miles More_v1.4.1_apkpure.com.apk">
+  			deviceName="Nexus_6"
+  			app="C:\automationWorkspace\milesAndMore\apk\Miles More_v1.4.1_apkpure.com.apk" 
+  			note="OS Version: Android 7.1.1">
   	
   		<testcase name="LoginPageValidate"/>
   	
