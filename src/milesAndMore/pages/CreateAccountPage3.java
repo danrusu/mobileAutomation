@@ -6,7 +6,6 @@ import java.util.List;
 import org.openqa.selenium.By;
 
 import base.Assert;
-import base.BasePage;
 import base.failures.TestCaseFailure;
 import base.tools.ThreadUtils;
 import io.appium.java_client.android.AndroidDriver;

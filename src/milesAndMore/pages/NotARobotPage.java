@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 import org.openqa.selenium.By;
 
-import base.BasePage;
 import base.failures.TestCaseFailure;
 import io.appium.java_client.android.AndroidDriver;
 

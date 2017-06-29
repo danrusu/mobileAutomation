@@ -3,7 +3,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 
 import base.Logger;
-import base.BasePage;
+import base.Page;
 import base.Driver;
 
 public class DynamicCheck {
@@ -108,8 +108,8 @@ public class DynamicCheck {
 	public boolean waitUntilWebPageActionMatchesCondition(
 			long totalMilisTimeout,
 			long stepTimeout,
-			Function< BasePage, Object> function1,
-			BasePage page,
+			Function< Page, Object> function1,
+			Page page,
 			Predicate<Object> expectedCondition
 			){
 

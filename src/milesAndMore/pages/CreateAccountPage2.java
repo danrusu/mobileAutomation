@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 
-import base.BasePage;
 import base.Driver;
 import base.failures.TestCaseFailure;
 import base.tools.ThreadUtils;

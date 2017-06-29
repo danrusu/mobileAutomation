@@ -8,7 +8,7 @@
   			appiumServerUrl="http://0.0.0.0:4723/wd/hub"
   			platformName="Android"
   			deviceName="Nexus_5X"
-  			app="C:\automationWorkspace\mobile\apk\Miles More_v1.4.1_apkpure.com.apk" >
+  			app="C:\automationWorkspace\milesAndMore\apk\Miles More_v1.4.1_apkpure.com.apk" >
   	
   		<testcase name="LoginPageValidate"/>
   	
