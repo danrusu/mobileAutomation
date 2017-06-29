@@ -13,8 +13,8 @@
                 <attribute name="Class-Path" value="."/>
             </manifest>
             <fileset dir="${dir.jarfile}/bin"/>
-            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/extJar/selenium-server-standalone-3.0.1.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/extJar/java-client-4.1.2.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/extJar/selenium-server-standalone-3.0.1.jar"/>
         </jar>
     </target>
 </project>
