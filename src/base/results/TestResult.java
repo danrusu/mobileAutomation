@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 
-public class TestResult extends ResultInfo{
+public class TestResult extends TestResultInfo{
 	
 	private Map<Integer, TestCaseResult> testCasesResults;
 

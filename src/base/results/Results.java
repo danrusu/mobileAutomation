@@ -58,18 +58,10 @@ public class Results {
 
 	public String getDetailedResults(
 			List<TestResult> testResultInfo,
-			int totalTests,
-			int succeededTests,
-			int failedTests, 
-			int crashedTests,
-			String elapsedSuiteTime
-			){
+			SuiteResult suiteResult){
 		StringBuilder resultsString = new StringBuilder();
 
-		resultsString.append(getResults(
-				totalTests, succeededTests, 
-				failedTests, crashedTests,
-				elapsedSuiteTime) + "\n")
+		resultsString.append(getResults(suiteResult) + "\n")
 		.append(logger.getSeparator()+"\n")
 		.append(TestResult.getHeader(15)+"\n");
 
@@ -117,26 +109,22 @@ public class Results {
 
 	public String getDetailedResultsHtml(
 			List<TestResult> testResultInfo,
-			int totalTests,
-			int succeededTests,
-			int failedTests, 
-			int crashedTests,
-			String elapsedSuiteTime
+			SuiteResult suiteResult
 			){
-		String suiteResult = (totalTests==succeededTests) ? 
+
+		String suiteResultStatus = (suiteResult.isSucceeded()) ? 
 				"<font color=\"green\">Succeeded</font>" : 
 					"<font color=\"red\">Failed</font>";
+		
 		StringBuilder resultsString = new StringBuilder();
 
-		resultsString.append("<html>\n<head>\n"
-				+ "<title>Details</title>\n"
-				+ "<link rel=\"stylesheet\" type=\"text/css\" href=\"../../html/css/main.css\">\n"
-				+ "<link rel=\"stylesheet\" type=\"text/css\" href=\"../../html/css/responsive.css\">\n"
-				+ "<script src=\"http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.js\"></script>"
-				+ "<script src=\"../../html/js/drsu_javascript.js\"></script>"
-				+ "</head>\n"
-				+ "<body onload=\"resultsPageSetup();\">\n");
+		
+		// HTML start + head
+		resultsString.append("<html>\n")
+			.append(htmlHead())
+			.append("<body onload=\"resultsPageSetup();\">\n");
 
+		
 		// Suite result
 		resultsString.append("<div id=\"suiteResultsContainer\">");
 		resultsString.append("<table class=\"suiteResults\">\n");
@@ -155,21 +143,20 @@ public class Results {
 		resultsString.append(createTableRow(
 				new ArrayList<String>(Arrays.asList(
 						XmlTestConfig.getSuiteName(),
-						suiteResult,
-						elapsedSuiteTime,
-						Integer.toString(totalTests),
-						Integer.toString(succeededTests), 
-						Integer.toString(failedTests),
-						Integer.toString(crashedTests)
+						suiteResultStatus,
+						suiteResult.getElapsedSuiteTime(),
+						Integer.toString(suiteResult.getTotalTests()),
+						Integer.toString(suiteResult.getSucceededTests()), 
+						Integer.toString(suiteResult.getFailedTests()),
+						Integer.toString(suiteResult.getCrashedTests())
 						)),
 
 				"suiteResults"));
 
-
-
 		resultsString.append("</table>\n</div>\n<br/><br/>\n");
+		
 
-		// Tests/TestCaes details
+		// Tests/TestCases details
 		resultsString.append("<table class=\"results\">\n");
 
 		String testHeader = "<span title=\"Expand/collapse test cases\">"
@@ -231,8 +218,9 @@ public class Results {
 						final Map<String, String> attr = new TreeMap<>();
 						attr.putAll(v.getAttributes());
 						attr.remove("name");
-	
-
+						// do not show password in report
+						attr.remove("password");
+						attr.remove("browser");
 
 						resultsString.append("<tr style=\"display:none;\">\n"
 								+ "<td>" 
@@ -270,12 +258,6 @@ public class Results {
 					);
 		}
 		resultsString.append("</table>\n"
-				/*+ "<br>\n"
-
-				+ "<footer>"
-				+ "<img width=\"101\" alt=\"\" src=\"../images/azets.png\">"
-				+ "</footer>"
-				 */
 				+"</body>\n"
 				+ "</html>\n");
 
@@ -283,6 +265,20 @@ public class Results {
 	}
 
 
+
+
+	private String htmlHead() {
+		return new StringBuilder()
+				.append("<head>\n")
+				.append("<title>Details</title>\n")
+
+				.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"../../html/css/main.css\">\n")
+				.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"../../html/css/responsive.css\">\n")
+				.append("<script src=\"http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.js\"></script>")
+				.append("<script src=\"../../html/js/drsu_javascript.js\"></script>")
+				.append("</head>\n")
+				.toString();
+	}
 
 
 	/**
@@ -293,8 +289,7 @@ public class Results {
 	 * @param failed - number of failed tests
 	 * @param crashed - number of crashed tests
 	 */
-	public String getResults(int total, int succeeded, 
-			int failed, int crashed, String elapsedTime){
+	public String getResults(SuiteResult suiteResult){
 
 		String colWidth = "15";
 		String format = "%-"+ colWidth + "s";
@@ -309,11 +304,11 @@ public class Results {
 				.append(String.format(format.replace(colWidth, "15"), "Failed" ) + " | ")
 				.append(String.format(format, "Crashed" ) + " | \n")
 				// result 
-				.append(String.format(format, total ) + " | ")
-				.append(String.format(format.replace(colWidth, "20"), elapsedTime ) + " | ")
-				.append( String.format(format.replace(colWidth, "30"), succeeded ) + " | ")
-				.append(String.format(format.replace(colWidth, "15"), failed ) + " | ")
-				.append(String.format(format, crashed ) + " |")
+				.append( String.format(format, suiteResult.getTotalTests() ) + " | " )
+				.append( String.format(format.replace(colWidth, "20"), suiteResult.getElapsedSuiteTime() ) + " | ")
+				.append( String.format(format.replace(colWidth, "30"), suiteResult.getSucceededTests() ) + " | " )
+				.append( String.format(format.replace(colWidth, "15"), suiteResult.getFailedTests() ) + " | " )
+				.append( String.format(format, suiteResult.getCrashedTests() ) + " |" )
 				.toString();
 	}
 
@@ -333,19 +328,8 @@ public class Results {
 
 
 
-	public void log(List<TestResult> testResultInfo,
-			int totalTests,
-			int succeededTests,
-			int failedTests,
-			int crashedTests,
-			String elapsedSuiteTime
-			){
-
-		logger.logLines(getDetailedResults(
-				testResultInfo, 
-				totalTests, 
-				succeededTests, failedTests, crashedTests, 
-				elapsedSuiteTime));
+	public void log(List<TestResult> testResultInfo, SuiteResult suiteResult){
+		logger.logLines(getDetailedResults(testResultInfo, suiteResult));
 	}
 
 
@@ -377,9 +361,11 @@ public class Results {
 				).substring(1).replace("\n","<br>");
 
 
+		//htmlAttr = attr.toString().replace("{", "").replace("}", "");
 		for (String attribute : attr.keySet()){
 			htmlAttr += attribute + "=\"" + attr.get(attribute) + "\"<br/>";
 		}
+
 
 		if ( save != null ){
 			htmlAttr += "<br>saved:" + save;
@@ -418,12 +404,12 @@ public class Results {
 		String failure = attr.remove("failure");
 		String js_errors = attr.remove("js_errors");
 
-		
+
 		//htmlAttr = attr.toString().replace("{", "").replace("}", "").replace("save=", "saved:");
 		for (String attribute : attr.keySet()){
-			htmlAttr = htmlAttr + (attribute + "=\"" + attr.get(attribute) + "\"</br>").replace("save=", "saved:");;
+			htmlAttr += attribute + "=\"" + attr.get(attribute) + "\"<br/>";
 		}
-		
+		htmlAttr.replace("save=", "saved:");
 
 		if (failure!=null){
 			htmlAttr += "<br><span class=\"failure\">failure: " + failure + "</span>";

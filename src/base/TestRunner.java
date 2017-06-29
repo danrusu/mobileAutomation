@@ -15,6 +15,7 @@ import java.util.Optional;
 import base.failures.TestCaseFailure;
 import base.results.ResultInfo;
 import base.results.Results;
+import base.results.SuiteResult;
 import base.results.TestCaseResult;
 import base.results.TestResult;
 import base.tools.ClassUtils;
@@ -29,11 +30,12 @@ import base.xml.XmlTestConfig;
  * @author Dan.Rusu
  */
 public class TestRunner {	
-	Logger logger;
-	Path logDirPath = Logger.getLogger().getLogDirPath();
+	private Logger logger;
+	private Path logDirPath;
 
-	Path resultFilePath;
-	ResultInfo.ResultFileType resultFileType;
+	private SuiteResult suiteResult;
+	private Path resultFilePath;
+	private ResultInfo.ResultFileType resultFileType;
 
 
 	String hostname;
@@ -48,13 +50,6 @@ public class TestRunner {
 	// ( 1, ("name", "MyVismaLogin"), ("browser", "firefox"))
 	private Map<Integer, TestConfig> tests;
 	private List<TestResult> testResultInfo;
-
-
-	private int succeededTests;
-	private int failedTests;
-	private int crashedTests;
-	private int totalTests;
-	private String elapsedSuiteTime;
 	private Results results;
 
 
@@ -86,24 +81,21 @@ public class TestRunner {
 	 * @param xmlTestFile
 	 */
 	public TestRunner(String xmlTestFile, String jenkinsJobName, String jenkinsBuildNr){
-//		TestRunner.jenkinsJobName = jenkinsJobName;
-//		TestRunner.jenkinsBuildNr = jenkinsBuildNr;
+		logger = Logger.getLogger();
+		logDirPath = logger.getLogDirPath();
+		suiteResult = new SuiteResult();
+		results = new Results();
 
 		logger = Logger.getLogger();		
 		logger.log("Starting TestRunner(\"" + xmlTestFile + "\""
 				+ ", \"" + jenkinsBuildNr + "\")");
 
-		results = new Results();
-
-		succeededTests = 0;
-		failedTests = 0;
-		crashedTests = 0;
 
 		// read test configuration from test XML file
 		XmlTestConfig testXml = new XmlTestConfig();
 		tests = testXml.readTestConfig(xmlTestFile);
 
-		totalTests = tests.size();
+		suiteResult.setTotalTests(tests.size());
 
 		// default result file type
 		resultFileType = XmlTestConfig.getSuiteResultFileType();
@@ -185,7 +177,7 @@ public class TestRunner {
 			// check if we have a valid driver
 			if ( Driver.driver == null ){
 				logger.log("test_" + testId + " failed! - null Driver");
-				failedTests++;
+				suiteResult.incrementFailedTests();
 				results.addTestResult(testResultInfo, 
 						currentTestResult, 
 						Result.TestFail, 
@@ -207,7 +199,7 @@ public class TestRunner {
 
 					if (isTestPass){
 						logger.log("test_" + testId + " succeeded!");
-						succeededTests++;
+						suiteResult.incrementSucceededTests();
 						results.addTestResult(testResultInfo, 
 								currentTestResult, 
 								Result.TestPass, 
@@ -217,7 +209,7 @@ public class TestRunner {
 					else {
 						if(!retry){
 							logger.log("test_" + testId + " failed!");
-							failedTests++;
+							suiteResult.incrementFailedTests();
 							results.addTestResult(testResultInfo, 
 									currentTestResult, 
 									Result.TestFail, 
@@ -244,16 +236,11 @@ public class TestRunner {
 		}// end tests loop
 
 
-		// Save results locally (results.txt) 
-		elapsedSuiteTime = TimeUtils.getElapsedTime(startSuiteTime);
-		//String testResult = (totalTests == succeededTests) ? "Succeeded" : "Failed";
+		// Save results locally (results.txt/html) 
+		suiteResult.setElapsedSuiteTime(TimeUtils.getElapsedTime(startSuiteTime));
+		//String testStatus = (suiteResult.isSucceeded()) ? "Succeeded" : "Failed";
 
-		results.log(testResultInfo, 
-			totalTests, 
-			succeededTests, 
-			failedTests, 
-			crashedTests, 
-			elapsedSuiteTime);
+		results.log(testResultInfo, suiteResult);
 			
 		saveLocalResult(resultFilePath.toString());
 
@@ -275,15 +262,13 @@ public class TestRunner {
 		switch (resultFileType.name()){
 		case "txt":
 			content = results.getDetailedResults(
-					testResultInfo, totalTests, 
-					succeededTests, failedTests,
-					crashedTests, elapsedSuiteTime);
+					testResultInfo, 
+					suiteResult);
 			break;
 		case "html":
 			content = results.getDetailedResultsHtml(
-					testResultInfo, totalTests, 
-					succeededTests, failedTests,
-					crashedTests, elapsedSuiteTime);
+					testResultInfo, 
+					suiteResult);
 			break;
 
 		}
