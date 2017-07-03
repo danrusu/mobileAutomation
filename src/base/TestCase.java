@@ -161,6 +161,7 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 	 */
 	public void setTestCaseAttributes(Map<String, String> testAttributes) {
 		this.testCaseAttributes = testAttributes;
+		dynamicEval(testAttributes);
 	}
 
 
@@ -371,6 +372,24 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 					staticTextField.toString(),
 					currentText);
 		}
+	}
+	
+	
+	
+	public String getFailure() {
+		return nullToEmptyString(getTestCaseAttributes().get("failure"));
+	}
+	
+	
+
+	public String getExpectedFailure() {
+		return nullToEmptyString(getTestCaseAttributes().get("expectedFailure"));
+	}
+		
+	
+	
+	public boolean expectFailure(){
+		return (! getExpectedFailure().isEmpty());
 	}
 
 }

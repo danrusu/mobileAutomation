@@ -293,7 +293,9 @@ public class TestRunner {
 	 * @return true is test pass, false otherwise
 	 */
 	private boolean runTestCase(TestCase testCase){
+		
 		boolean successfulRun = true; 
+		
 		try {
 			// remove previous failure it test retries are set
 			// previous failures info will be available only in the log 
@@ -304,8 +306,14 @@ public class TestRunner {
 		// handle all problems: Exception, Error, RuntimeException
 		catch(Throwable th){
 			testCase.addFailure(th);
-
-			successfulRun = false;
+			if ( ( testCase.expectFailure() ) 
+					&& th.toString().contains(testCase.getExpectedFailure()) ){
+				
+				successfulRun = true;
+			}
+			else {
+				successfulRun = false;
+			}
 		}
 		finally {
 			//testCase.addJsErrors();
@@ -313,8 +321,6 @@ public class TestRunner {
 
 		return successfulRun;
 	}
-
-
 
 
 
