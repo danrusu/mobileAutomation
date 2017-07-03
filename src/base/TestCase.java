@@ -217,7 +217,9 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 
 		// eval "save" first
 		String save = evalAttribute("save");
-		saveAll(save);
+		if (save != null){
+			saveAll(save);
+		}
 
 
 		testCaseAttributes.keySet().forEach(

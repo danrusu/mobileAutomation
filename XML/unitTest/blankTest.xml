@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="MilesAndMore_BlankTest" user="dan.rusu" package="unitTest">
+
+
+	<test name="UT1_success" 
+		appiumServerUrl="http://0.0.0.0:4723/wd/hub"
+		platformName="Android" 
+		deviceName="Nexus_6"
+		app="C:\automationWorkspace\milesAndMore\apk\Miles More_v1.4.1_apkpure.com.apk"
+		note="OS Version: Android 7.1.1">
+
+		<testcase name="BlankTestCase" 
+			timeStamp="{$ddMMyyyy}_{$HHmmss}"
+			save="userDir={$userDir};logFolder={$logFolder}"
+
+			note="Success unit test (no browser)
+				\nuserDir: {userDir}
+				\nlogFolder: {logFolder}" />
+	</test>
+
+
+	<test name="UT2_exception" 
+		appiumServerUrl="http://0.0.0.0:4723/wd/hub"
+		platformName="Android" 
+		deviceName="Nexus_6"
+		app="C:\automationWorkspace\milesAndMore\apk\Miles More_v1.4.1_apkpure.com.apk"
+		note="OS Version: Android 7.1.1">
+
+		<testcase name="BlankTestCaseException" 
+		expectedFailure="Test case exception!" />
+
+	</test>
+
+
+	<test name="UT3_error" 
+		appiumServerUrl="http://0.0.0.0:4723/wd/hub"
+		platformName="Android" 
+		deviceName="Nexus_6"
+		app="C:\automationWorkspace\milesAndMore\apk\Miles More_v1.4.1_apkpure.com.apk"
+		note="OS Version: Android 7.1.1">
+
+		<testcase name="BlankTestCaseError" 
+			expectedFailure="Test case error!" />
+	</test>
+
+
+	<test name="UT4_runtimeException" 
+		appiumServerUrl="http://0.0.0.0:4723/wd/hub"
+		platformName="Android" 
+		deviceName="Nexus_6"
+		app="C:\automationWorkspace\milesAndMore\apk\Miles More_v1.4.1_apkpure.com.apk"
+		note="OS Version: Android 7.1.1">
+		
+		<testcase name="BlankTestCaseRuntimeException"
+			expectedFailure="Test case runtime exception!"
+			note="Failure unit test
+				\nuserDir: {userDir}
+				\nlogFolder: {logFolder}" />
+	</test>
+
+
+</suite> 
