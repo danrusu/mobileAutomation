@@ -1,4 +1,4 @@
-# milesAndMore
+# milesAndMore v1.0
 
 This is a test automation project for mobile devices.
 
