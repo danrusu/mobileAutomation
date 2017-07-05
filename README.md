@@ -1,6 +1,6 @@
-# milesAndMore
+# milesAndMore v1.0
 
-This is a test automation project for mobile devices.
+## Test automation project for mobile devices.
 
 Detailed project description:  docs/_README_milesAndMore.pdf
 
