@@ -115,16 +115,16 @@ public class Results {
 		String suiteResultStatus = (suiteResult.isSucceeded()) ? 
 				"<font color=\"green\">Succeeded</font>" : 
 					"<font color=\"red\">Failed</font>";
-		
+
 		StringBuilder resultsString = new StringBuilder();
 
-		
+
 		// HTML start + head
 		resultsString.append("<html>\n")
-			.append(htmlHead())
-			.append("<body onload=\"resultsPageSetup();\">\n");
+		.append(htmlHead())
+		.append("<body onload=\"resultsPageSetup();\">\n");
 
-		
+
 		// Suite result
 		resultsString.append("<div id=\"suiteResultsContainer\">");
 		resultsString.append("<table class=\"suiteResults\">\n");
@@ -154,7 +154,7 @@ public class Results {
 				"suiteResults"));
 
 		resultsString.append("</table>\n</div>\n<br/><br/>\n");
-		
+
 
 		// Tests/TestCases details
 		resultsString.append("<table class=\"results\">\n");
@@ -222,38 +222,21 @@ public class Results {
 						attr.remove("password");
 						attr.remove("browser");
 
-						resultsString.append("<tr style=\"display:none;\">\n"
-								+ "<td>" 
-								+ testResult.getId()
-								+ "/"
-								+ v.getId()
-								+ "</td>\n" 
-
-								// test case name column 
-								+ "<td>" 
-								+ v.getAttributes().get("name")
-								+ "</td>\n"
 
 
-								// test case elapsed column 
-								+ "<td>" 
-								+ v.getElapsedTime()
-								+ "</td>\n"
+						resultsString.append("\n<tr style=\"display:none;\">");
 
-								// test case result column 
-								+ "<td>"
-								+
+						resultsString.append(getHtmlColumns(
+								testResult.getId() + "/" + v.getId(),
+								v.getAttributes().get("name"),
+								v.getElapsedTime(),
 								(result.contains("Pass") ? 
 										"<font color=\"green\">" + result + "</font>" : 
-											"<font color=\"red\">" + result + "</font>")
-								+ "</td>\n"
+											"<font color=\"red\">" + result + "</font>"),
+								attrToHtml(v.getAttributes().get("name"), attr)
+								));
 
-
-								// test case attributes column
-								+ "<td>"
-								+ attrToHtml(v.getAttributes().get("name"), attr)
-								+ "</td>\n"
-								+ "</tr>\n");
+						resultsString.append("</tr>\n");
 					}
 					);
 		}
@@ -267,6 +250,17 @@ public class Results {
 
 
 
+	private Object getHtmlColumns(String... columns) {
+		StringBuilder cols = new StringBuilder();
+
+		Arrays.asList(columns).forEach(
+				c -> cols.append("\n<td>" + c + "</td>"));
+
+
+		return cols.toString();
+	}
+	
+	
 	private String htmlHead() {
 		return new StringBuilder()
 				.append("<head>\n")

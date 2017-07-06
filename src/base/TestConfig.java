@@ -14,9 +14,6 @@ public class TestConfig {
 		return testAttributes.get("name");
 	}
 
-	public String getBrowser(){
-		return testAttributes.get("browser");
-	}
 
 	public TestConfig(Map<String, String> testAttributes,
 			Map<Integer, Map<String, String>> testCases) {

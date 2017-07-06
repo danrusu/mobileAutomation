@@ -15,7 +15,9 @@ public class ResultInfo {
 	 */
 	public enum ResultFileType{
 		txt,
-		html;
+		html,
+		json,
+		xml;
 	}
 
 
