@@ -6,9 +6,16 @@ import base.Logger;
 import base.Page;
 import base.Driver;
 
+/**
+ * Class for dynamic function evaluations.
+ * 
+ * @author dan.rusu
+ *
+ */
 public class DynamicCheck {
 	private Logger logger;
 
+	
 	public DynamicCheck(Logger logger){
 		this.logger = logger;
 	}

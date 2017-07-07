@@ -9,6 +9,9 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class TimeUtils {
+	
+	
+	
 	public static long getElapsedTimeInMillis(Instant startTime){
 		Instant now = Instant.now();
 
@@ -18,6 +21,7 @@ public class TimeUtils {
 	}
 
 
+	
 	public static Map<String, String> millisToTime(long inputMillis){
 		Map<String, String> timeMap = new TreeMap<>();
 
@@ -61,6 +65,4 @@ public class TimeUtils {
 		return dateFormat.format(Calendar.getInstance().getTime());		
 	}
 	
-	
-
 }

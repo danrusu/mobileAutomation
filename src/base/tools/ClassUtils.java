@@ -9,12 +9,18 @@ import java.util.jar.JarInputStream;
 
 import base.failures.TestCaseFailure;
 
+/**
+ * Class actions.
+ * 
+ * @author dan.rusu
+ *
+ */
 public class ClassUtils {
 
 	/**
 	 * Get simple class name for current Class.
 	 * 
-	 * @return
+	 * @return - current class' name
 	 */
 	public static String getClassName() {
 		String className = Thread.currentThread().getStackTrace()[2].getClassName();
@@ -71,8 +77,17 @@ public class ClassUtils {
 	}
 
 
+	
+	/**
+	 * Find class by name in a list of packages.
+	 * 
+	 * @param testCaseName - class name to search for
+	 * @param suitePackages - a list of packages to search in
+	 * @return - first class found in the packages list
+	 */
 	public static Class<?> findClass(String testCaseName, List<String> suitePackages) {
 		Class<?> testClass = null;
+		String failure = "";
 		for (String suitePackage : suitePackages){
 
 			try {
@@ -81,30 +96,17 @@ public class ClassUtils {
 				break;
 			}
 			catch(ClassNotFoundException cnfEx){
-				/*Logger.getLogger().log("Class <" +  testCaseName 
-						+ "> was not found in <" + suitePackage + "> package.");*/
+				failure = cnfEx.getMessage();
 			}
 
 		}
 		// if class not found
 		if (testClass == null){
 			throw new TestCaseFailure("Class <" + testCaseName +"> was not found"
-					+ " in the suite packages: " + Arrays.asList(suitePackages) );
+					+ " in the suite packages: " + Arrays.asList(suitePackages)
+					+ "failure: " + failure);
 		}
 
 		return testClass;
-	}
-	
-	
-	
-	public static List<String> findPackageNamesEndingWith(String suffix) {
-	    List<String> result = new ArrayList<>();
-	    System.out.println(Package.getPackages());
-	    for(Package p : Package.getPackages()) {
-	        if (p.getName().endsWith(suffix)) {
-	           result.add(p.getName());
-	        }
-	    }
-	    return result;
 	}
 }
