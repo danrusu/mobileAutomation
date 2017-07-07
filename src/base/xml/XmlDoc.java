@@ -1,7 +1,6 @@
 package base.xml;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,13 +9,13 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.dom.DOMSource;
 
-import org.w3c.dom.DOMException;
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
 import base.Logger;
+import base.failures.TestCaseFailure;
 
 
 
@@ -28,23 +27,22 @@ import base.Logger;
  */
 public class XmlDoc {
 	Logger logger = Logger.getLogger();
-	private org.w3c.dom.Document Doc;
+	private Document Doc;
 
 
 
 	/**
-	 * Opens and parses XML input file.
+	 * Opens and parses XML input file. Sets up Doc.
+	 * Possible exception: ParserConfigurationException/SAXException/IOException/DOMException
 	 * 
-	 * @throws DOMException - for any 
 	 * @param xmlInputFile - an XML file
-	 * @throws Exception - ParserConfigurationException/SAXException/IOException
 	 */
-	public XmlDoc( File xmlInputFile ) throws Exception
+	public XmlDoc( File xmlInputFile )
 	{
-		Doc = null;
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		
 		dbf.setValidating(false);
+		
 		//TODO -- may consider additional validation
 		//dbf.setIgnoringElementContentWhitespace(true);
 		dbf.setIgnoringComments(true);
@@ -54,20 +52,13 @@ public class XmlDoc {
 		try {
 			db = dbf.newDocumentBuilder();
 			db.setEntityResolver(null);
-		} catch (ParserConfigurationException e) {
-			logger.log(""+e);
-			throw e;
-		}
-
-		try {			
+			
 			Doc = db.parse(xmlInputFile);
-		} catch (SAXException e) {
+			
+		} catch (Exception e) {
 			logger.log(""+e);
-			throw e;
-		} catch (IOException e) {
-			logger.log(""+e);
-			throw e;
-		}		
+			throw new TestCaseFailure(e.getMessage());
+		}
 	}
 
 
@@ -81,14 +72,17 @@ public class XmlDoc {
 	{
 		final DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance( );
 		DocumentBuilder db = null;
+		
 		try
 		{
 			db = dbf.newDocumentBuilder( );
 		}
-		catch ( final ParserConfigurationException e )
+		catch ( ParserConfigurationException e )
 		{
-			e.printStackTrace( );
+			logger.log(""+e);
+			throw new TestCaseFailure(e.getMessage());
 		}
+		
 		Doc = db.newDocument( );
 		final Element root = Doc.createElement( rootName );
 		Doc.appendChild( root );
@@ -97,7 +91,7 @@ public class XmlDoc {
 
 
 	/**
-	 * Get xml root.
+	 * Get XML root element.
 	 * 
 	 * @return - XML's root element
 	 */
@@ -109,7 +103,7 @@ public class XmlDoc {
 
 
 	/**
-	 *  Create a set of all children for some Element.
+	 * Get all children nodes for an Element.
 	 * 
 	 * @param Elem - XML element
 	 * @return - a set of children Elements for the specified element
@@ -130,18 +124,21 @@ public class XmlDoc {
 	}
 
 
+	
+	// Methods for creating an XML DOM - not user for the moment
+	// Useful for an XML report
 
 	/**
 	 * Get document as a transform object ( For use in outputting to FILE or stream )
 	 *
 	 * @return - the transform object
-	 * @throws Exception - when dom is null
+	 * @throws Exception - custom exception
 	 */
 	public DOMSource getDomSrc( ) throws Exception
 	{
 		if ( Doc == null )
 		{
-			throw new Exception( "XMLDoc - getDomSrc() - dom NULL! " );
+			throw new Exception( "XMLDoc - getDomSrc() - NULL Doc! " );
 		}
 		return new DOMSource( Doc );
 	}
@@ -149,7 +146,7 @@ public class XmlDoc {
 
 
 	/**
-	 * create a new Element for use in the document
+	 * Create a new Element to use in the document.
 	 *
 	 * @param tagName - the tag name for the new element
 	 * @return - the new created Element 
@@ -160,7 +157,3 @@ public class XmlDoc {
 	}
 
 }
-
-
-
-

@@ -1,5 +1,11 @@
 package base.xml;
 
+/**
+ * XML result states.
+ * 
+ * @author dan.rusu
+ *
+ */
 public class XmlResult {
 
 	   public enum Result
@@ -11,10 +17,7 @@ public class XmlResult {
 	      TestCasePass,
 	      TestCaseFail,
 	      TestCaseCrash,
-	      UnknownError, ;
+	      UnknownError;
 	   }
-
-	   
-	   
-	   
+   
 }

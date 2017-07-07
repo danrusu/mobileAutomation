@@ -7,10 +7,24 @@ import java.util.TreeMap;
 import base.Logger;
 import base.tools.TimeUtils;
 
+/**
+ * Class for predefined XML variables.
+ * 
+ * @author dan.rusu
+ *
+ */
 public class XmlDynamicData {
 	private static Map<String, String> savedDataMap = new TreeMap<>();
 	private static Logger logger = Logger.getLogger();
 	
+	
+	
+	/**
+	 * Predefined variables.
+	 * 
+	 * @author dan.rusu
+	 *
+	 */
 	public enum DynamicValue{
 		$userDir,
 		$logFolder,
@@ -38,6 +52,13 @@ public class XmlDynamicData {
 
 	
 
+	/**
+	 * Calculate value of dynamic XML variable.
+	 * 
+	 * @param savedDataMap - saved variables pool
+	 * @param dynamicValue - variable name
+	 * @return - final value for corresponding variable
+	 */
 	public static String getDynamicValue(Map<String, String> savedDataMap, String dynamicValue){
 		String value="";
 		String key;
@@ -99,6 +120,12 @@ public class XmlDynamicData {
 
 
 	
+	/**
+	 * Evaluate variable string.
+	 * 
+	 * @param value - variable string value
+	 * @return - evaluated variable string
+	 */
 	private static String dynamicEval(String value) {
 		DynamicValue dv = DynamicValue.valueOf(value);
 		String returnValue = value;
@@ -150,17 +177,37 @@ public class XmlDynamicData {
 
 
 	
+	/**
+	 * Get all saved variables.
+	 * 
+	 * @return - saved variables pool
+	 */
 	public static Map<String, String> getSavedData() {
 		//logger.log("Get current saved data: " + savedDataMap);
 		return savedDataMap;
 	}
 
+	
+	
+	/**
+	 * Save variable in variables pool.
+	 * 
+	 * @param key - variable name
+	 * @param value - variable value
+	 */
 	public static void saveData(String key, String value) {
 		savedDataMap.put(key, value);
 		logger.log("Saved data: " + key + "=" + savedDataMap.get(key));
 	}
 
 
+	
+	/**
+	 * Split string by ';' and generates a variable map for saving.
+	 * 
+	 * @param saveString - save variables string 
+	 * @return - a map of variables to save
+	 */
 	public static Map<String, String> getMapFromSaveString(String saveString){
 		Map<String, String> saveMap = new TreeMap<>();
 		

@@ -13,14 +13,16 @@ import base.Logger;
 public class XmlOutput
 {
 	Logger logger = Logger.getLogger();
-	private File          Output;
+	private File Output;
+	
+	
 
-	public XmlOutput()
-	{   
-		Output = null;
-	}
-
-
+	/**
+	 * Save to outputFile from outputDoc object.
+	 * 
+	 * @param outputFile - file on disk
+	 * @param outputDoc - XMLDoc document
+	 */
 	protected void saveOutput( File outputFile , XmlDoc outputDoc )
 	{
 		final Logger logger = Logger.getLogger( );
@@ -50,7 +52,7 @@ public class XmlOutput
 
 
 	/**
-	 * Save output results in an XML file.
+	 * Save XmlDoc in an XML file.
 	 * 
 	 * @param outputDoc - the results XmlDoc
 	 */
@@ -74,10 +76,14 @@ public class XmlOutput
 
 
 
+	/**
+	 * Get output file.
+	 * 
+	 * @return - output file
+	 */
 	public File getOutput( )
 	{
 		return Output;
 	}
-
 
 }

@@ -126,11 +126,10 @@ public class TestRunner {
 		// run all tests loaded from XML
 		for ( Integer testId : tests.keySet() ){
 			Instant startTestTime = Instant.now();
-			int testRetries = Integer.parseInt(
-					Optional.ofNullable(
-							tests.get(testId)
-							.getTestAttributes()
-							.get("retries"))
+			int testRetries = Integer.parseInt(Optional.ofNullable(tests
+					.get(testId)
+					.getTestAttributes()
+					.get("retries"))
 					.orElse("1"));
 
 			logger.logHeader("Running " 

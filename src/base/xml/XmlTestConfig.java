@@ -30,6 +30,7 @@ public class XmlTestConfig {
 	private static String suiteName;
 	private static String user;
 	private static String emails;
+	
 	private static ResultFileType resultFileType;
 	private static List<String> suitePackages = new ArrayList<>();
 	
@@ -156,6 +157,11 @@ public class XmlTestConfig {
 
 
 
+	/**
+	 * Set suite's packages for finding test cases.
+	 * 
+	 * @param suitePackages - test cases packages
+	 */
 	private void setSuitePackages(String suitePackages) {
 		String[] spkgs =  suitePackages.split(";");
 		List<String> retSuitePackages = new ArrayList<>();
@@ -166,14 +172,27 @@ public class XmlTestConfig {
 		XmlTestConfig.suitePackages = retSuitePackages;	
 	}
 
+	
+	
+	/**
+	 * Get test cases packages.
+	 * 
+	 * @return - a list of test cases packages.
+	 */
 	public static List<String> getSuitePackages() {
 		
 		return XmlTestConfig.suitePackages;
 	}
 
 
-	private void setGrid(String attribute) {
-		XmlTestConfig.grid = TestConfig.stringToBoolean(attribute);
+
+	/**
+	 * Set if the test will use a Selenium grid.
+	 * 
+	 * @param useGrid - true if using grid, false otherwise
+	 */
+	private void setGrid(String useGrid) {
+		XmlTestConfig.grid = TestConfig.stringToBoolean(useGrid);
 	}
 
 
@@ -222,40 +241,6 @@ public class XmlTestConfig {
 
 
 
-/*	private void dynamicEval(Map<String, String> testCaseAttributes) {
-		testCaseAttributes.keySet().forEach(
-				key -> {
-					final String value = testCaseAttributes.get(key);
-					testCaseAttributes.replace(
-							key, XmlDynamicData.getValue(
-									XmlDynamicData.getSavedData(), value
-							));
-					
-					if (key.equals("save")){
-						saveAll(value);
-					}
-				}
-				);
-	}
-
-
-
-	private void saveAll(String saveString) {
-		List<String> entries = Arrays.asList(saveString.split(";"));
-		entries.forEach(
-				entry -> {
-					final String savedKey =  entry.split("=")[0];
-					final String savedValue =  entry.split("=")[1];
-					XmlDynamicData.saveData(savedKey, 
-							XmlDynamicData.getValue(XmlDynamicData.getSavedData(),
-									savedValue));
-				}
-				);
-		
-	}*/
-
-
-
 	/**
 	 * Get tests map from XML.
 	 * 	
@@ -278,19 +263,28 @@ public class XmlTestConfig {
 			return new TreeMap<Integer, TestConfig>();
 		}
 		
-		list(testsMap);
+		log(testsMap);
 		
 		return testsMap;
 	}
 
 
 	
+	/**
+	 * @return - tests map generated from XML
+	 */
 	public static Map<Integer, TestConfig> getTestsMap(){
 		return testsMap;
 	}
 	
 	
 
+	/**
+	 * Get XML element's attributes
+	 * 
+	 * @param attributes - XML node map
+	 * @return - attributes map
+	 */
 	public Map<String, String> getAttributes(NamedNodeMap attributes){
 		Map<String, String > attrMap = new TreeMap<>();
 		for (  int j=0; j<attributes.getLength(); j++ ){
@@ -306,6 +300,8 @@ public class XmlTestConfig {
 		return suiteName;
 	}
 
+	
+	
 	public static ResultFileType getSuiteResultFileType() {
 		return resultFileType;
 	}
@@ -317,11 +313,14 @@ public class XmlTestConfig {
 	}
 	
 	
+	
 	public static void setSuiteResultFileType(String resultFileType) {
 		if ( ! resultFileType.isEmpty()){
 			XmlTestConfig.resultFileType = ResultFileType.valueOf(resultFileType);
 		}
 	}
+	
+	
 	
 	public static String getUser() {
 		return XmlTestConfig.user;
@@ -333,12 +332,21 @@ public class XmlTestConfig {
 		XmlTestConfig.user = user;
 	}
 	
+	
+	
 	private static void setEmail(String email) {
 		XmlTestConfig.emails = email;
 	}
 	
 	
-	private void list(Map<Integer, TestConfig> tests) {
+	
+	
+	/**
+	 * Log all tests.
+	 * 
+	 * @param tests - tests map
+	 */
+	private void log(Map<Integer, TestConfig> tests) {
 		tests.keySet().forEach(
 				k -> {
 					logger.log("Test_" + k + ": " + tests.get(k).getTestAttributes());
@@ -352,13 +360,18 @@ public class XmlTestConfig {
 
 
 
+	/**
+	 * @return - true if set for using grid
+	 */
 	public static boolean getGrid() {
-		
 		return XmlTestConfig.grid;
 	}
 
 
 
+	/**
+	 * @return - an array of emails addresses 
+	 */
 	public static String[] getEmails() {
 		return XmlTestConfig.emails.split(";");
 	}
@@ -369,10 +382,6 @@ public class XmlTestConfig {
 		XmlTestConfig.suitePackages.addAll(suitePackages);
 		
 	}
-
-
 	
 }
-
-
 
