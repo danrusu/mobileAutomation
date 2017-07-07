@@ -46,10 +46,15 @@ public class Results {
 			TestCaseResult testCaseResult, 
 			Result result, 
 			Instant startTestCaseTime){
+		
+		logger.log("test_" + testResult.getId() + "/" 
+				+ "testCase_" + testCaseResult.getId() 
+				+ ": " + result.toString());
 
 		// set testCase results info
 		testCaseResult.setElapsedTestTime( startTestCaseTime );
 		testCaseResult.setResult( result );
+		
 		// add test case result to current test result
 		testResult.addTestCaseInfo(testCaseResult.getId(), testCaseResult);
 	}

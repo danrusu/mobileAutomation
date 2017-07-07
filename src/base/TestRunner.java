@@ -40,9 +40,8 @@ public class TestRunner {
 
 	String hostname;
 
-	//private static String jenkinsJobName;
-	//private static String jenkinsBuildNr;
-
+	private static String jenkinsJobName;
+	private static String jenkinsBuildNr;
 
 
 	// ( testId , (attributeName, attributeValue) )
@@ -52,18 +51,7 @@ public class TestRunner {
 	private List<TestResult> testResultInfo;
 	private Results results;
 
-
-	/**
-	 * Test's types enumeration.
-	 * 
-	 * Tests must be in a package with the 
-	 * name contained by this enumeration.
-	 *
-	 */
-	public enum TestType{
-		eFLow,
-		pmt;
-	}
+	
 
 	/**
 	 * Constructor - used for non Jenkins runs
@@ -75,6 +63,7 @@ public class TestRunner {
 	}
 
 
+	
 	/**
 	 * Generic Constructor - used also for Jenkins runs
 	 * 
@@ -85,6 +74,9 @@ public class TestRunner {
 		logDirPath = logger.getLogDirPath();
 		suiteResult = new SuiteResult();
 		results = new Results();
+		
+		TestRunner.jenkinsJobName = jenkinsJobName;
+		TestRunner.jenkinsBuildNr = jenkinsBuildNr;
 
 		logger = Logger.getLogger();		
 		logger.log("Starting TestRunner(\"" + xmlTestFile + "\""
@@ -287,10 +279,10 @@ public class TestRunner {
 
 
 	/**
-	 * Runs a WebPageTestCase.
+	 * Runs a TestCase.
 	 * 
-	 * @param testCase	
-	 * @return true is test pass, false otherwise
+	 * @param testCase - test case object to run	
+	 * @return - true is test pass, false otherwise
 	 */
 	private boolean runTestCase(TestCase testCase){
 		
@@ -341,18 +333,16 @@ public class TestRunner {
 		int failedTestCases=0;
 		@SuppressWarnings("unused")
 		int crashedTestCases=0;
+		
 		boolean allTestCasesPassed = true;
 		String testId = testResult.getId();
 
+		// get the test cases available packages
+		// search for test cases classes in this packages
 		List<String> suitePackages = XmlTestConfig.getSuitePackages();
 
-		// log current test test cases
-		logger.log("TestCases: ");
-		for (Integer testCaseId : testCases.keySet()){
-			logger.log("test_" + testId + "/" 
-					+ "testCase_" + testCaseId + " : "
-					+ testCases.get(testCaseId));
-		}
+		logAllTestCases(testId, testCases);
+
 
 		for(Integer testCaseId : testCases.keySet()){
 			boolean stopTest = false;
@@ -371,34 +361,36 @@ public class TestRunner {
 
 			String testCaseName = testCaseAttributes.get("name");
 
+			// Test case retries
 			for (int i=1; i<=retries; i++){
 				boolean retry = (retries - i) > 0;
+				
+				logger.logHeader("Executing " 
+						+ "test_" + testId + "/" 
+						+ "testCase_" + testCaseId 
+						+ "(attempt " + i + "/" + retries + ")"
+						+ " : " + testCaseAttributes);
 
 				try {
-					logger.logHeader("Executing " 
-							+ "test_" + testId + "/" 
-							+ "testCase_" + testCaseId 
-							+ "(attempt " + i + "/" + retries + ")"
-							+ " : " + testCaseAttributes);	
-
 					// find the testCaseName class in the packages listed in the suite project list 
+					// if class is not fount it throws TestCaseFailure (Error)
 					Class<?> testClass = ClassUtils.findClass(testCaseName, suitePackages);
 
 
 					// TODO - move this to separate method
 					// Run a test case
-					Object testCase;
+					TestCase testCase;
 					if ( TestCase.class.isAssignableFrom(testClass) ){				
 						// instantiate current test
-						testCase = testClass.newInstance();
+						testCase = (TestCase)testClass.newInstance();
 
 						// initialize test attributes
-						((TestCase)testCase).setTestCaseAttributes(testCaseAttributes);
+						testCase.setTestCaseAttributes(testCaseAttributes);
 
 						// @mainBreakPoint
 						//************************************************************
 						// Run test case
-						isTestCasePass = runTestCase( (TestCase)testCase );
+						isTestCasePass = runTestCase(testCase);
 						//************************************************************
 
 						// save screenshots at the end of each test
@@ -411,10 +403,9 @@ public class TestRunner {
 
 
 						// handle test case result
-						if (isTestCasePass) {
+						if (isTestCasePass) {						
 							succeededTestCases++;
-							logger.log("test_" + testId + "/" 
-									+ "testCase_" + testCaseId + " succeeded !");
+	
 							results.addTestCaseResult(testResult, 
 									testCaseResult, 
 									Result.TestCasePass, 
@@ -423,10 +414,9 @@ public class TestRunner {
 						}
 						else {
 							// fail test
-							allTestCasesPassed = false;
 							failedTestCases++;
-							logger.log("test_" + testId + "/" 
-									+ "testCase_" + testCaseId + " failed !");
+							allTestCasesPassed = false;
+							
 							results.addTestCaseResult(testResult, 
 									testCaseResult, 
 									Result.TestCaseFail, 
@@ -448,21 +438,23 @@ public class TestRunner {
 						}
 					}
 					else {
+						//TODO - maybe this is never because of the findClass throw; redesign
+						
+						// wrong test case name
 						failedTestCases++;
-						logger.log("test_" + testId + "/" 
-								+ "testCase_" + testCaseId + " failed !");
-						// no other tests available yet														
 						allTestCasesPassed = false;
+
 						results.addTestCaseResult(testResult, 
 								testCaseResult, 
 								Result.TestCaseFail, 
 								startTestCaseTime);
-						logger.log("No runner is available sfor this type of test case! - " + testCaseName );
+						
+						logger.log("No runner is available for this type of test case! - " + testCaseName );
 						stopTest=true; 
 						break;
 					}
 
-					// handle all cases of code failure: Exception, Error, RuntimeException
+				// handle all cases of code failure: Exception, Error, RuntimeException
 				} catch (Throwable th) {	
 					// framework bugs/issues
 					crashedTestCases++;
@@ -473,11 +465,7 @@ public class TestRunner {
 							Result.TestCaseCrash, 
 							startTestCaseTime);	
 
-					logger.logLines("test_" + testId + "/" 
-							+ "testCase_" + testCaseId + " crashed !\n" 
-							+ TestCaseFailure.stackToString(th));
 
-					crashedTestCases++;
 					if (!retry) { 
 						allTestCasesPassed = false;
 						stopTest=true; 
@@ -498,6 +486,23 @@ public class TestRunner {
 
 
 	/**
+	 * Log all test cases
+	 * 
+	 * @param testId - current test 
+	 * @param testCases - current test cases
+	 */
+	private void logAllTestCases(String testId, Map<Integer, Map<String, String>> testCases) {
+		logger.log("TestCases: ");
+		testCases.keySet().stream().forEach(
+				key -> logger.log("test_" + testId + "/" 
+						+ "testCase_" + key + " : "
+						+ testCases.get(key))
+				);
+	}
+
+
+
+	/**
 	 * Get all tests information.
 	 * 
 	 * @return - a list of executed tests information.
@@ -509,12 +514,23 @@ public class TestRunner {
 
 
 	/**
+	 * Get job name for Jenkins runs.
+	 * 
+	 * @return - job's name
+	 */
+	public static String getJenkinsJobName() {
+		return jenkinsJobName;
+	}
+	
+	
+	
+	/**
 	 * Get build number for Jenkins runs.
 	 * 
-	 * @return
+	 * @return - build number
 	 */
-	/*public static String getJenkinsBuildNr() {
+	public static String getJenkinsBuildNr() {
 		return jenkinsBuildNr;
-	}*/
+	}
 
 }
