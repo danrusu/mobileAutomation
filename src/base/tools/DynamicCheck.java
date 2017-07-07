@@ -1,5 +1,7 @@
 package base.tools;
+
 import java.util.function.Function;
+
 import java.util.function.Predicate;
 
 import base.Logger;
@@ -7,7 +9,10 @@ import base.Page;
 import base.Driver;
 
 /**
- * Class for dynamic function evaluations.
+ * Class that implements dynamic timeouts for custom conditions.
+ * 
+ * Methods are generic and require lambdas as parameters.
+ * 
  * 
  * @author dan.rusu
  *

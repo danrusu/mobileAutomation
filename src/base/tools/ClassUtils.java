@@ -35,7 +35,7 @@ public class ClassUtils {
 	 * This will be used for extracting test documentation from jars.
 	 * 
 	 * @param jarName - the jar for searching the package
-	 * @param packageName - the package fo searching the classes
+	 * @param packageName - the package for searching the classes
 	 * @return - a list of all classes names that are in the specified package
 	 */
 	public static List<String> getClassesNamesInPackage(
@@ -45,9 +45,6 @@ public class ClassUtils {
 
 		for(String packageName : suitePackages){
 			packageName = packageName.replaceAll("\\." , "/");
-
-			/*System.out.println(
-				"Jar " + jarName + " looking for " + packageName);*/
 
 			try(JarInputStream jarFile = new JarInputStream
 					(new FileInputStream (jarName));)
@@ -61,8 +58,7 @@ public class ClassUtils {
 					}
 					if((jarEntry.getName ().startsWith (packageName)) &&
 							(jarEntry.getName ().endsWith (".class")) ) {
-						/*System.out.println
-					("Found " + jarEntry.getName().replaceAll("/", "\\."));*/
+
 						classes.add (jarEntry.getName()
 								.replaceAll("/", "\\.")
 								.replaceAll("\\.class", ""));

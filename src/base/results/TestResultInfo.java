@@ -14,8 +14,9 @@ public class TestResultInfo {
 	 * 
 	 */
 	public enum ResultFileType{
-		txt,
-		html;
+		html,
+		json,
+		xml;
 	}
 
 

@@ -409,10 +409,11 @@ public class TestRunner {
 									testCaseResult, 
 									Result.TestCasePass, 
 									startTestCaseTime);
+							
 							break;
 						}
 						else {
-							// fail test
+							// failed test
 							failedTestCases++;
 							allTestCasesPassed = false;
 							

@@ -261,7 +261,6 @@ public class Results {
 		Arrays.asList(columns).forEach(
 				c -> cols.append("\n<td>" + c + "</td>"));
 
-
 		return cols.toString();
 	}
 	
