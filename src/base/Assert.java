@@ -5,13 +5,13 @@ public class Assert{
 	
 	
 	/**
-	 * Assertion check - log message before it throws.
+	 * True expression assertion check - log message before it throws.
 	 * 
-	 * @param isSuccessful - expression to be asserted
-	 * @param message - message
+	 * @param expression - expression to be asserted
+	 * @param message - message to throw
 	 */
-	public static void assertTrue(boolean isSuccessful, String errorMessage){
-		if( isSuccessful ){
+	public static void assertTrue(boolean expression, String errorMessage){
+		if( expression ){
 			Logger.getLogger().logLines("Assertion: " + errorMessage + " - SUCCEEDED!");
 		}
 		else {
@@ -22,11 +22,19 @@ public class Assert{
 	
 	
 	
-	public static void assertTrue(boolean isSuccessful, 
+	/**
+	 * True expression assertion check - log message before it throws.
+	 * 
+	 * @param expression - expression to be asserted
+	 * @param errorMessage - message to throw
+	 * @param expected - expected value
+	 * @param current - current value
+	 */
+	public static void assertTrue(boolean expression, 
 			String errorMessage,
 			String expected,
 			String current){
-		if( isSuccessful ){
+		if( expression ){
 			Logger.getLogger().logLines(errorMessage 
 					+ "\nexpected: \"" + expected + "\""
 					+ "\nSUCCEEDED!");
@@ -44,6 +52,11 @@ public class Assert{
 
 
 	
+	/**
+	 * Throw failure assertion message.
+	 * 
+	 * @param message - message to throw
+	 */
 	public static void fail(String message){
 		Logger.getLogger().logLines("Assertion: " + message + " - FAILED!");
 		throw new AssertionError(message);

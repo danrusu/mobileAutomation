@@ -29,10 +29,12 @@ public class Driver {
 
 	/**
 	 * Get an instance of an WebDriver.
-	 * @param deviceName 
 	 * 
-	 * @param implicitWaitSeconds - set implicit diver wait
-	 * @throws MalformedURLException 
+	 * @param appiumServerUrl - servers URL
+	 * @param platformName - OS name (Android, IOS ...)
+	 * @param deviceName - device model name
+	 * @param app - mobile application to install/run
+	 * @return - an android driver connected via Appium
 	 */
 	public static AndroidDriver<?> driverStart( String appiumServerUrl, 
 			String platformName,
@@ -68,11 +70,18 @@ public class Driver {
 	}
 	
 	
+	
 	public static void setDefaultImplicitWait(){
 		driver.manage().timeouts().implicitlyWait(defaultWait, TimeUnit.SECONDS);
 	}
 	
 	
+	
+	/**
+	 * Save screenshot to file.
+	 * 
+	 * @param fileName
+	 */
 	public static void saveScreenShot(String fileName){
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
@@ -92,33 +101,14 @@ public class Driver {
 	}
 	
 	
-	public static void verticalSwipeUp()
-	{
-		logger.log("Swipe up");
-		verticalSwipe(0.2, 0.8, 1000);
-	}
 	
-	public static void verticalSwipeDown()
-	{
-		logger.log("Swipe down");
-		verticalSwipe(0.8, 0.2, 1000);
-	}
-
-
-	public  static void verticalSwipeLeft()
-	{
-		logger.log("Swipe left");
-		horizontalSwipe(0.8, 0.2, 1000);
-	}
-	
-	
-	public static void verticalSwipeRight()
-	{
-		logger.log("Swipe right");
-		horizontalSwipe(0.2, 0.8, 1000);
-	}
-	
-
+	/**
+	 * Swipe from xStart to xStop on the horizontal center of the screen.
+	 * 
+	 * @param xStart - start point in percents 
+	 * @param xStop - end point in percents 
+	 * @param speed - swipe speed
+	 */
 	public static void horizontalSwipe(double xStart, double xStop, int speed)
 	{
 		Dimension size = driver.manage().window().getSize();
@@ -138,6 +128,13 @@ public class Driver {
 	
 
 
+	/**
+	 * Swipe from yStart to yStop on the vertical center of the screen.
+	 * 
+	 * @param yStart - start point in percents  
+	 * @param yStop - end point in percents 
+	 * @param speed - swipe speed
+	 */
 	public static void verticalSwipe(double yStart, double yStop, int speed)
 	{
 		Dimension size = driver.manage().window().getSize();
@@ -157,7 +154,40 @@ public class Driver {
 	
 	
 	
+	public static void verticalSwipeUp()
+	{
+		logger.log("Swipe up");
+		verticalSwipe(0.2, 0.8, 1000);
+	}
 	
+	
+	public static void verticalSwipeDown()
+	{
+		logger.log("Swipe down");
+		verticalSwipe(0.8, 0.2, 1000);
+	}
+
+
+	
+	public  static void verticalSwipeLeft()
+	{
+		logger.log("Swipe left");
+		horizontalSwipe(0.8, 0.2, 1000);
+	}
+	
+	
+	
+	public static void verticalSwipeRight()
+	{
+		logger.log("Swipe right");
+		horizontalSwipe(0.2, 0.8, 1000);
+	}
+	
+	
+	
+	/**
+	 * Press Back (<) button on the mobile device.
+	 */
 	public static void goBack() {
 		driver.navigate().back();
 	}

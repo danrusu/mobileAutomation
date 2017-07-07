@@ -79,6 +79,24 @@ public abstract class Page implements PageValidation{
 	}
 
 	
+	
+	/**
+	 * Assert the status of a check box.
+	 * 
+	 * @param checkBoxBy - locator
+	 * @param expectedState - true/false = checked/unchecked
+	 * @param detailsMessage - message to log/throw
+	 */
+	public void assertIsChecked(By checkBoxBy, boolean expectedState, String detailsMessage){
+		boolean isChecked = isChecked(checkBoxBy);
+		Assert.assertTrue(
+				isChecked==expectedState,
+				detailsMessage,
+				""+expectedState,
+				""+isChecked);
+	}
+	
+	
 
 	public String getText(By by) {
 		logger.log("Get text from " + by);
@@ -87,18 +105,14 @@ public abstract class Page implements PageValidation{
 
 	
 
-	public void assertIsChecked(By by, boolean expectedState, String detailsMessage){
-		boolean isChecked = isChecked(by);
-		Assert.assertTrue(
-				isChecked==expectedState,
-				detailsMessage,
-				""+expectedState,
-				""+isChecked);
-	}
 
-
-
-	// listItemLocator - is a locator for multiple list items 
+	/**
+	 * Click first list element that contains specified text.
+	 * All list elements have the same locator.
+	 * 
+	 * @param listItemLocator - locator for all list items
+	 * @param elementText - text to search in the list items
+	 */
 	public void clickListElement(By listItemLocator, String elementText) {
 		boolean found = false;
 		for(int i=0;i<100;i++)
@@ -132,6 +146,9 @@ public abstract class Page implements PageValidation{
 
 
 
+	/**
+	 * Press the mobile devece's Back (<) button
+	 */
 	public void closeKeyboard() {
 		logger.log("Navigate back");
 		driver.navigate().back();
