@@ -6,19 +6,20 @@ import java.util.List;
 import base.tools.ClassUtils;
 
 /**
- * Class for generating Test Case documentation via TestScenario interface. 
+ * Class for listing Test Cases names or documentation via TestScenario interface. 
  * @author Dan.Rusu
  *
  */
 public class TestCaseDocs {
 
 	public void run(List<String> suitePackages) {
-		String jarPath = Paths.get(System.getProperty("user.dir") + "/rpa.jar")
+		String jarPath = Paths.get(System.getProperty("user.dir") + "/milesAndMore.jar")
 				.toString();
 
 		List<String> availableTestCases = ClassUtils.getClassesNamesInPackage(
 				jarPath, suitePackages);
 
+		//TODO - sort test cases alphabetically 
 		availableTestCases.forEach(
 				c -> {
 					final String[] items = c.split("\\.");
@@ -45,11 +46,7 @@ public class TestCaseDocs {
 				try {
 					testCase = (TestCase)testClass.newInstance();
 					return testCase.getTestCaseScenario();
-				} catch (InstantiationException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IllegalAccessException e) {
-					// TODO Auto-generated catch block
+				} catch (InstantiationException | IllegalAccessException e) {
 					e.printStackTrace();
 				}
 				
@@ -57,5 +54,4 @@ public class TestCaseDocs {
 
 		return "error";
 	}
-
 }

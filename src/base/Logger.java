@@ -64,9 +64,9 @@ public class Logger {
 			
 			
 		} catch (FileAlreadyExistsException e){
-			System.out.println("Log folder already exists: "+e);
+			//System.out.println("Log folder already exists: "+e);
 		}catch(Exception e){
-			System.out.println("Error: Failed to create folder!\n" + e);
+			//System.out.println("Error: Failed to create folder!\n" + e);
 		}
 		
 		
@@ -74,9 +74,9 @@ public class Logger {
 		try {
 			Files.createDirectory(tempDirPath);
 		} catch (FileAlreadyExistsException e){
-			System.out.println("Temp folder already exists: "+e);
+			//System.out.println("Temp folder already exists: "+e);
 		}catch(Exception e){
-			System.out.println("Error: Failed to create 'temp' folder!\n" + e);
+			//System.out.println("Error: Failed to create 'temp' folder!\n" + e);
 		}
 		
 		
