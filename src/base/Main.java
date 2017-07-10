@@ -78,12 +78,16 @@ public class Main {
 	 */
 	private static void usage(){
 		System.out.println();
-		System.out.println("Please add arguments.");
+		System.out.println("Wrong arguments.\n");
 		System.out.println("Usage:");
-		System.out.println("E.g.");
+		System.out.println("\nRun test:");
 		System.out.println("java -jar milesAndMore.jar config.xml [jenkinsJobName jenkinsBuildNr]");
-		System.out.println("java -jar milesAndMore.jar docs [testCaseName]");
+		System.out.println("\nList available test cases modules:");
+		System.out.println("java -jar milesAndMore.jar docs");
+		System.out.println("\nList test case's documentation:");
+		System.out.println("java -jar milesAndMore.jar docs testCaseName");
 	}
 
 }
+
 
