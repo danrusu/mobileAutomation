@@ -235,7 +235,7 @@ public class Logger {
 	}
 	
 	
-	// this could be usefull for getting failure details
+	// this could be useful for getting failure details
 	public List<String> getLatestLogLines(int nrOfLines){
 		List<String> logLines = new ArrayList<>();
 		

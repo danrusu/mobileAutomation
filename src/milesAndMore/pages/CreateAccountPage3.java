@@ -139,56 +139,56 @@ public class CreateAccountPage3 extends BasePage{
 	
 	
 	public String getPageTitleText(){
-		return getText(pageTitleText);
+		return getTrimmedText(pageTitleText);
 	}
 	
 	public String getUsernameText(){
-		return getText(usernameText);
+		return getTrimmedText(usernameText);
 	}
 	
 	public String getUsernameInput(){
-		return getText(usernameInput);
+		return getTrimmedText(usernameInput);
 	}
 	
 	public String getPasswordVerticalBarText() {
-		return getText(passwordVerticalBarText);
+		return getTrimmedText(passwordVerticalBarText);
 	}
 	
 	public String getNewPasswordText(){
-		return getText(newPasswordText);
+		return getTrimmedText(newPasswordText);
 	}
 	public String getNewPasswordInput(){
-		return getText(newPasswordInput);
+		return getTrimmedText(newPasswordInput);
 	}
 	
 	public String getConfirmPasswordText(){
-		return getText(confirmPasswordText);
+		return getTrimmedText(confirmPasswordText);
 	}
 	public String getConfirmPasswordInput(){
-		return getText(confirmPasswordInput);
+		return getTrimmedText(confirmPasswordInput);
 	}
 	
 	public String getEmailText(){
-		return getText(emailText);
+		return getTrimmedText(emailText);
 	}
 	public String getEmailInput(){
-		return getText(emailInput);
+		return getTrimmedText(emailInput);
 	}
 	
 	public String getTemporaryCardNumberText(){
-		return getText(temporaryCardNumberText);
+		return getTrimmedText(temporaryCardNumberText);
 	}
 	public String getTemporaryCardNumberInput(){
-		return getText(temporaryCardNumberInput);
+		return getTrimmedText(temporaryCardNumberInput);
 	}
 	
 	
 	public String getRegisterTermConditionsText(){
-		return getText(registerTermConditionsText);
+		return getTrimmedText(registerTermConditionsText);
 	}
 	
 	public String getCReateAccountButtonText(){
-		return getText(createAccountButton);
+		return getTrimmedText(createAccountButton);
 	}
 
 	

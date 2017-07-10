@@ -45,22 +45,22 @@ public class LoginPage extends BasePage{
 
 
 	public String getOnBoardTitleText(){
-		return getText(onBoardTitleText);
+		return getTrimmedText(onBoardTitleText);
 	}
 
 
 	public String getOnBoardText(){
-		return getText(onBoardText);
+		return getTrimmedText(onBoardText);
 	}
 
 
 	public String getCreateAccountButtonText(){
-		return getText(createAccountButton);
+		return getTrimmedText(createAccountButton);
 	}
 
 
 	public String getSignInButtonText(){
-		return getText(signInButton);
+		return getTrimmedText(signInButton);
 	}
 
 

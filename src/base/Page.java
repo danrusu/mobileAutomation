@@ -44,7 +44,7 @@ public abstract class Page implements PageValidation{
 
 	
 	
-	// TO DO - issue here; need better implementation
+	// TO DO - issue here; needs better implementation
 	public void sendText(By inputBy, String text){
 		logger.log("Clear + Send text \"" + text + "\" to " + inputBy );
 		WebElement input = findElement(inputBy);
@@ -69,8 +69,10 @@ public abstract class Page implements PageValidation{
 
 
 	
+	
+	// TODO - move all asserts outside page def
 	public void assertText(By by, String expectedtext, String detailsMessage){
-		String currentText = getText(by);
+		String currentText = getTrimmedText(by);
 		Assert.assertTrue(
 				currentText.equals(expectedtext),
 				detailsMessage,
@@ -78,6 +80,7 @@ public abstract class Page implements PageValidation{
 				currentText);
 	}
 
+	
 	
 	
 	/**
@@ -98,13 +101,19 @@ public abstract class Page implements PageValidation{
 	
 	
 
+	public String getTrimmedText(By by) {
+		logger.log("Get trimmed text from " + by);
+		return findElement(by).getText().trim();
+	}
+	
+	
+	
 	public String getText(By by) {
 		logger.log("Get text from " + by);
-		return findElement(by).getText().trim();
+		return findElement(by).getText();
 	}
 
 	
-
 
 	/**
 	 * Click first list element that contains specified text.

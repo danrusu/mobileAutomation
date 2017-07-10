@@ -14,21 +14,11 @@ import base.failures.TestCaseFailure;
 import base.tools.DynamicCheck;
 import base.xml.XmlDynamicData;
 
+
 /**
- * Generic web page test.
+ * Generic page test case.
+ * All test cases will extend this.
  * 
- * @author Dan Rusu
- *
- */
-/**
- * @author dan.rusu
- *
- */
-/**
- * @author dan.rusu
- *
- */
-/**
  * @author dan.rusu
  *
  */
@@ -66,7 +56,7 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 	
 
 	/**
-	 * Constructor 
+	 * Constructor
 	 */
 	public TestCase(WebDriver driver) {
 		this.internalTest = true;
@@ -78,7 +68,7 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 	
 	
 	/**
-	 * Close all opened browser windows; kill driver.   
+	 * Close all opened windows; kill driver.   
 	 * 
 	 */
 	public void quit(){
@@ -114,7 +104,15 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 
 
 	
-	public boolean checkPageTitle(String title, 
+	/**
+	 * Wait until page titles becomes the expected one.
+	 * 
+	 * @param expectedTitle - expected page title
+	 * @param totalMilisTimeout - total timeout
+	 * @param stepTimeout - timeout step
+	 * @return - true is the title matches the expected title
+	 */
+	public boolean checkPageTitle(String expectedTitle, 
 			long totalMilisTimeout,
 			long stepTimeout){
 
@@ -123,12 +121,21 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 				stepTimeout, 
 				object -> ((WebDriver)object).getTitle(), 
 				driver, 
-				title);
+				expectedTitle);
 	}
 
 
 
-	public boolean checkPageUrl(String url, 
+	
+	/**
+	 * Wait until page URL becomes the expected one.
+	 * 
+	 * @param expectedUrl - expected page URL
+	 * @param totalMilisTimeout - total timeout
+	 * @param stepTimeout - timeout step
+	 * @return - true is the pages's URL matches the expected URL
+	 */
+	public boolean checkPageUrl(String expectedUrl, 
 			long totalMilisTimeout,
 			long stepTimeout){
 
@@ -137,13 +144,20 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 				stepTimeout, 
 				object -> ((WebDriver)object).getCurrentUrl(), 
 				driver, 
-				url);
+				expectedUrl);
 	}
 
 
+	
+	/**
+	 * Check for alert presence.
+	 * 
+	 * @return - true if an alert is present
+	 */
 	public boolean isAlertPresent(){
 		boolean foundAlert = false;
-		WebDriverWait wait = new WebDriverWait(driver, 0 /*timeout in seconds*/);
+		// check for alert presence with no timeout (0 seconds)
+		WebDriverWait wait = new WebDriverWait(driver, 0);
 		try {
 			wait.until(ExpectedConditions.alertIsPresent());
 			foundAlert = true;
@@ -153,6 +167,7 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 		return foundAlert;
 	}
 
+	
 
 	/**
 	 * Set the test's attributes.
@@ -165,14 +180,18 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 	}
 
 
+	
 	public void addAttribute(String name, String value){
 		this.testCaseAttributes.put(name, value);
 	}
 
+	
+	
 	public String getStartWindowHandle() {
 		return this.startWindowHandle;
 	}
 
+	
 
 	public boolean isInternalTest() {
 		return internalTest;
@@ -201,7 +220,6 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 	public void setStartWindowHandle(String startWindowHandle) {
 		this.startWindowHandle = startWindowHandle;
 	}
-
 	
 
 	
@@ -213,17 +231,15 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 	 * @param testCaseAttributes - test case (attributeName, attributeValus) map
 	 */
 	public void dynamicEval(Map<String, String> testCaseAttributes) {
-		//Map<String, String> attributes = testCaseAttributes;
 
-		// eval "save" first
+		// evaluate "save" first (so saved values can be used at all the other attributes)
 		String save = evalAttribute("save");
 		if (save != null){
 			saveAll(save);
 		}
 
-
+		// evaluate all other attributes but "save"
 		testCaseAttributes.keySet().forEach(
-
 				key -> {
 					if (! key.equals("save")){
 						final String value = TestConfig.nullToEmptyString(testCaseAttributes.get(key));
@@ -245,7 +261,7 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 	 * Save String variable into memory so that 
 	 * they can be used for following test cases. 
 	 * 
-	 * @param saveString
+	 * @param saveString - a list of semicolon separated saveName=saveValue pairs.
 	 */
 	public void saveAll(String saveString) {
 		if (! saveString.isEmpty()){
@@ -312,6 +328,7 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 							throw new TestCaseFailure("Saving results failed!", e);
 						}
 					});
+			
 			String saved = XmlDynamicData.getSavedData().toString(); 
 			testCaseAttributes.put("save", saved);
 			logger.log("Saved data: save=" + saved);
@@ -319,10 +336,15 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 	}
 
 	
+
 	
+	/**
+	 * Add an error as test case failure.
+	 * 
+	 * @param th - thrown error
+	 */
 	public void addFailure(Throwable th) {
 		logger.logLines( TestCaseFailure.stackToString(th) );
-		//testCase.addAttribute("failure", th.getMessage());
 		if (th instanceof TestCaseFailure){
 			addAttribute("failure", th.toString() + th.getCause());
 		}
@@ -334,19 +356,39 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 	
 	
 	
+	/**
+	 * Return an empty string for null.
+	 * 
+	 * @param s - string input
+	 * @return - empty string for null input, or the string otherwise.
+	 */
 	public String nullToEmptyString(String s){
 		return TestConfig.nullToEmptyString(s);
 	}
 
 	
 
+	
+	/**
+	 * Return attribute's value from attributes' map.
+	 * 
+	 * @param attribute - attribute's name
+	 * @return - attribute's value
+	 */
 	public String evalAttribute(String attribute){
-		//return nullToEmptyString(getTestCaseAttributes().get(attribute));
 		return getTestCaseAttributes().get(attribute);
 	}
 	
 	
 	
+	
+	
+	/**
+	 * Check if an attribute field is available within a test case.
+	 * 
+	 * @param attributeField
+	 * @return - true if there is a field corresponding to an attribute.
+	 */
 	public boolean isAvailable(Object attributeField){
 		if ( attributeField == null ){
 			return false;
@@ -383,7 +425,11 @@ abstract public class TestCase implements Runnable, TestCaseScenario{
 	}
 	
 	
-
+	
+	// Expected failure of a test case - set to true for test cases that are expected to fail; 
+	// a test case that fails and is expected to fail will be reported as successful 
+	// and the failure will be available in the final report.
+	
 	public String getExpectedFailure() {
 		return nullToEmptyString(getTestCaseAttributes().get("expectedFailure"));
 	}

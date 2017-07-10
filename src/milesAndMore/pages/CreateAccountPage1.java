@@ -214,50 +214,50 @@ public class CreateAccountPage1 extends BasePage{
 
 
 	public String getAcademicTitleText() {
-		return getText(academicTitle);
+		return getTrimmedText(academicTitle);
 	}
 	public String getAcademicTitleInput() {
-		return getText(academicTitleInput);
+		return getTrimmedText(academicTitleInput);
 	}
 
 
 	public String getFirstNameText() {
-		return getText(firstName);
+		return getTrimmedText(firstName);
 	}
 	public String getFirstNameInput() {
-		return getText(firstNameInput);
+		return getTrimmedText(firstNameInput);
 	}
 
 
 	public String getLastNameText() {
-		return getText(lastName);
+		return getTrimmedText(lastName);
 	}
 	public String getLastNameInput() {
-		return getText(lastNameInput);
+		return getTrimmedText(lastNameInput);
 	}
 
 
 	public String getSalutationTitleMrText() {
-		return getText(mrRadioButtonText);
+		return getTrimmedText(mrRadioButtonText);
 	}
 
 	public String getSalutationTitleMrsText() {
-		return getText(mrsRadioButtonText);
+		return getTrimmedText(mrsRadioButtonText);
 	}
 
 
 	public String getSignInAsGuestText() {
-		return getText(signInAsGuest);
+		return getTrimmedText(signInAsGuest);
 	}
 
 
 	public String getNextButtonText() {
-		return getText(nextButton);
+		return getTrimmedText(nextButton);
 	}
 
 
 	public String getPageTitleText() {
-		return getText(pageTitleText);
+		return getTrimmedText(pageTitleText);
 	}
 
 

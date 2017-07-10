@@ -272,42 +272,42 @@ public class CreateAccountPage2 extends BasePage{
 	
 	// Elements text getters
 	public String getBirthDateText(){
-		return getText(birthDate);
+		return getTrimmedText(birthDate);
 	}
 	public String getBirthDateInput(){
-		return getText(birthDateInput);
+		return getTrimmedText(birthDateInput);
 	}
 	
 	public String getStreetAddressText(){
-		return getText(streetAdress);
+		return getTrimmedText(streetAdress);
 	}
 	public String getStreetAddressInput(){
-		return getText(streetAdressInput);
+		return getTrimmedText(streetAdressInput);
 	}
 	
 	public String getZipCodeText(){
-		return getText(zipCode);
+		return getTrimmedText(zipCode);
 	}
 	public String getZipCodeInput(){
-		return getText(zipCodeInput);
+		return getTrimmedText(zipCodeInput);
 	}
 
 	public String getCityText(){
-		return getText(city);
+		return getTrimmedText(city);
 	}
 	public String getCityInput(){
-		return getText(cityInput);
+		return getTrimmedText(cityInput);
 	}
 	
 	public String getCountryText(){
-		return getText(country);
+		return getTrimmedText(country);
 	}
 	public String getCountryInput(){
-		return getText(countryInput);
+		return getTrimmedText(countryInput);
 	}
 	
 	public String getNextButtonText(){
-		return getText(nextButton);
+		return getTrimmedText(nextButton);
 	}
 	
 }

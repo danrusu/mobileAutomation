@@ -28,17 +28,22 @@ public class Main {
 		}
 
 		
-		// print internal test cases documentation
+		// list test cases names / documentation
 		if (args[0].equals("docs")){
 			TestCaseDocs tcDoc = new TestCaseDocs();
+			
+			// list all available test cases names
 			if ( args.length == 1 ){
 				tcDoc.run(testPackages);
 			}
+			
+			// list test case's internal documentation (getTestScenario)
 			else {
 				String testcaseName = args[1];
 				tcDoc.run(testPackages, testcaseName);
 			}
 		}
+		
 		// run test scenario from XML
 		else{
 			TestRunner testRunner;
@@ -46,11 +51,12 @@ public class Main {
 			XmlTestConfig.setSuitePackages(testPackages);
 			System.out.println(XmlTestConfig.getSuitePackages());
 			
+			// normal setup (running from IDE or command line)
 			if ( args.length == 1 ){
 				testRunner = new TestRunner(args[0]);
 			}
 			
-			// setup for running from Jenkins
+			// Jenkins setup
 			else if ( args.length == 3 ){
 				testRunner = new TestRunner(args[0], args[1], args[2]);
 			}
@@ -80,3 +86,4 @@ public class Main {
 	}
 
 }
+
