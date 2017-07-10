@@ -252,7 +252,7 @@ public class TestRunner {
 
 		switch (resultFileType.name()){
 		case "txt":
-			content = results.getDetailedResults(
+			content = results.getDetailedResultsText(
 					testResultInfo, 
 					suiteResult);
 			break;

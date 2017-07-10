@@ -14,7 +14,10 @@ import base.xml.XmlResult.Result;
 import base.xml.XmlTestConfig;
 
 public class Results {
+	
 	private Logger logger = Logger.getLogger();
+	
+	
 	/**
 	 * Set a TestInfo endDate and result and add it to testsResults list. 
 	 * 
@@ -32,7 +35,8 @@ public class Results {
 		testResultInfo.add(testResult);
 	}
 
-
+	
+	
 	/**
 	 * Set a TestCaseInfo endDate and result and add it to testInfo. 
 	 * 
@@ -60,9 +64,51 @@ public class Results {
 	}
 
 
+	
+	/**
+	 * Get a header string for displaying test info.
+	 * 
+	 * @return - formatted test info header string
+	 */
+	public static String getTextHeader(Integer defaultColWidth){
+		String colWidth = Integer.toString(defaultColWidth);
+		String format = "%-"+ colWidth + "s";
+		return String.format(format, "Test[/TestCase]" ) + " | " 
+				+ String.format(format.replace(colWidth, "20"), "Elapsed" ) + " | "
+				+ String.format(format.replace(colWidth, "40"), "Name" ) + " | "
+				+ String.format(format.replace(colWidth, "15"), "Result" ) + " | "
+				+ String.format(format, "Details" );
+	}
+	
+	
+	
+	/**
+	 * Get formatted test information as string.
+	 * 
+	 * @return - test information string
+	 */
+	public String getTextInfo(ResultInfo testResultInfo, 
+			Integer defaultColWidth){
+		String colWidth = Integer.toString(defaultColWidth);
+		String format = "%-"+ colWidth + "s";
+		// details: all attributes but name
+		Map<String, String> details = new TreeMap<>();
+		details.putAll(testResultInfo.getAttributes());
+		details.remove("name");
 
-	public String getDetailedResults(
-			List<TestResult> testResultInfo,
+		return String.format(format, testResultInfo.getId() ) + " | " 
+			+ String.format(format.replace(colWidth, "20"), 
+					testResultInfo.getElapsedTime() ) + " | "
+			+ String.format(format.replace(colWidth, "40"), 
+					testResultInfo.getAttributes().get("name") ) + " | "
+			+ String.format(format.replace(colWidth, "15"),
+					testResultInfo.getResult()) + " | "
+			+ String.format(format, details);
+	}
+	
+	
+
+	public String getDetailedResultsText(List<TestResult> testResultInfo,
 			SuiteResult suiteResult){
 		StringBuilder resultsString = new StringBuilder();
 
@@ -84,13 +130,13 @@ public class Results {
 
 	private String createTableHeaderRow(List<String> columns, String className){
 		StringBuilder row = new StringBuilder();
-		row.append("<tr>\n");
+		row.append("\n<tr>");
 
-		columns.forEach(c -> row.append("<th>\n")
+		columns.forEach(c -> row.append("\n<th>")
 				.append(c)
-				.append("</th>\n"));
+				.append("</th>"));
 
-		row.append("</tr>");
+		row.append("\n</tr>");
 
 		return row.toString();
 	}
@@ -265,6 +311,7 @@ public class Results {
 	}
 	
 	
+	
 	private String htmlHead() {
 		return new StringBuilder()
 				.append("<head>\n")
@@ -327,7 +374,7 @@ public class Results {
 
 
 	public void log(List<TestResult> testResultInfo, SuiteResult suiteResult){
-		logger.logLines(getDetailedResults(testResultInfo, suiteResult));
+		logger.logLines(getDetailedResultsText(testResultInfo, suiteResult));
 	}
 
 
