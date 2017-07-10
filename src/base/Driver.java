@@ -36,7 +36,7 @@ public class Driver {
 	 * @param app - mobile application to install/run
 	 * @return - an android driver connected via Appium
 	 */
-	public static AndroidDriver<?> driverStart( String appiumServerUrl, 
+	public static AndroidDriver<?> driverStart(String appiumServerUrl, 
 			String platformName,
 			String deviceName,
 			String app){
@@ -65,12 +65,18 @@ public class Driver {
 	
 
 	
+	/**
+	 * Set implicit wait to 0.
+	 */
 	public static void resetImplicitWait(){
 		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
 	}
 	
 	
 	
+	/**
+	 * Set implicit wait to the default value - 10 seconds.
+	 */
 	public static void setDefaultImplicitWait(){
 		driver.manage().timeouts().implicitlyWait(defaultWait, TimeUnit.SECONDS);
 	}

@@ -64,9 +64,9 @@ public class Logger {
 			
 			
 		} catch (FileAlreadyExistsException e){
-			//System.out.println("Log folder already exists: "+e);
+			System.out.println("Log folder already exists: "+e);
 		}catch(Exception e){
-			//System.out.println("Error: Failed to create folder!\n" + e);
+			System.out.println("Error: Failed to create folder!\n" + e);
 		}
 		
 		
@@ -74,9 +74,9 @@ public class Logger {
 		try {
 			Files.createDirectory(tempDirPath);
 		} catch (FileAlreadyExistsException e){
-			//System.out.println("Temp folder already exists: "+e);
+			System.out.println("Temp folder already exists: "+e);
 		}catch(Exception e){
-			//System.out.println("Error: Failed to create 'temp' folder!\n" + e);
+			System.out.println("Error: Failed to create 'temp' folder!\n" + e);
 		}
 		
 		
@@ -135,14 +135,19 @@ public class Logger {
 		return TimeUtils.getFormatedDate(format);	
 	}
 
+	
+	
 	public static String getTimeStamp(){
 		return TimeUtils.getFormatedDate(timeStampFormat);	
 	}
+	
+	
 	
 	public static String getFileTimeStamp(){
 		return TimeUtils.getFormatedDate(fileTimeStampFormat);	
 	}
 
+	
 
 	/**
 	 * Return current Logger instance if exists or instantiate logger if not.
@@ -184,7 +189,7 @@ public class Logger {
 
 
 	/**
-	 * Getter for log directory.
+	 * Get the log directory.
 	 * 
 	 * @return - log directory path
 	 */
@@ -193,24 +198,25 @@ public class Logger {
 	}
 
 	
+	
 	/**
-	 * Getter for log file path.
+	 * Get the log file path.
 	 * 
-	 * @return - log directory path
+	 * @return - log file path
 	 */
 	public Path getLogFilePath() {
 		return logFilePath;
 	}
 
+	
 
 	/**
-	 * Log multiple line string.
+	 * Log multiple line string, one line at a time.
 	 * 
-	 * @param lines
+	 * @param lines - multiple lines string
 	 */
 	public void logLines(String lines) {
-		List<String> allLines = new ArrayList<>(Arrays.asList(lines.split("\n")));
-		allLines.forEach( 
+		Arrays.asList(lines.split("\n")).stream().forEach( 
 				line -> log(line));
 	}
 	
@@ -219,7 +225,7 @@ public class Logger {
 	/**
 	 * Log First line from string.
 	 * 
-	 * @param lines
+	 * @param lines - multiple lines string
 	 */
 	public void logFirstLine(String lines) {
 		List<String> allLines = new ArrayList<>(Arrays.asList(lines.split("\n")));
@@ -229,6 +235,7 @@ public class Logger {
 	}
 	
 	
+	// this could be usefull for getting failure details
 	public List<String> getLatestLogLines(int nrOfLines){
 		List<String> logLines = new ArrayList<>();
 		
@@ -237,10 +244,14 @@ public class Logger {
 		return logLines;
 	}
 	
+	
+	
+	/**
+	 * @return - the temporary folder path
+	 */
 	public Path getTempDirPath(){
 		return tempDirPath;
 	}
-
 }
 
 
