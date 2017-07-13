@@ -2,7 +2,7 @@
 
 ## Test automation project for mobile devices.
 
-Wiki: https://github.com/danrusu/mat/wiki
+Wiki: https://github.com/danrusu/mobileAutomation/wiki
 
 Detailed project description:  docs/_README_mat.pdf
 
