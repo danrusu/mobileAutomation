@@ -13,7 +13,7 @@ import base.tools.ClassUtils;
 public class TestCaseDocs {
 
 	public void run(List<String> suitePackages) {
-		String jarPath = Paths.get(System.getProperty("user.dir") + "/milesAndMore.jar")
+		String jarPath = Paths.get(System.getProperty("user.dir") + "/mat.jar")
 				.toString();
 
 		List<String> availableTestCases = ClassUtils.getClassesNamesInPackage(

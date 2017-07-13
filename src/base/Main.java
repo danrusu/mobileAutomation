@@ -9,7 +9,7 @@ import base.xml.XmlTestConfig;
 
 /**
  * 
- * Main entry of application (milesAndMore.jar).
+ * Main entry of application (mat.jar).
  * 
  * @author dan.rusu
  *
@@ -74,18 +74,18 @@ public class Main {
 	
 	
 	/**
-	 * Display milesAndMore.jar usage information.
+	 * Display mat.jar usage information.
 	 */
 	private static void usage(){
 		System.out.println();
 		System.out.println("Wrong arguments.\n");
 		System.out.println("Usage:");
 		System.out.println("\nRun test:");
-		System.out.println("java -jar milesAndMore.jar config.xml [jenkinsJobName jenkinsBuildNr]");
+		System.out.println("java -jar mat.jar config.xml [jenkinsJobName jenkinsBuildNr]");
 		System.out.println("\nList available test cases modules:");
-		System.out.println("java -jar milesAndMore.jar docs");
+		System.out.println("java -jar mat.jar docs");
 		System.out.println("\nList test case's documentation:");
-		System.out.println("java -jar milesAndMore.jar docs testCaseName");
+		System.out.println("java -jar mat.jar docs testCaseName");
 	}
 
 }
