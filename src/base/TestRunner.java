@@ -13,14 +13,14 @@ import java.util.Map;
 import java.util.Optional;
 
 import base.failures.TestCaseFailure;
-import base.results.ResultInfo;
+import base.results.Result;
+import base.results.ResultStatus;
 import base.results.Results;
 import base.results.SuiteResult;
 import base.results.TestCaseResult;
 import base.results.TestResult;
 import base.tools.ClassUtils;
 import base.tools.TimeUtils;
-import base.xml.XmlResult.Result;
 import base.xml.XmlTestConfig;
 
 
@@ -35,7 +35,7 @@ public class TestRunner {
 
 	private SuiteResult suiteResult;
 	private Path resultFilePath;
-	private ResultInfo.ResultFileType resultFileType;
+	private Result.ResultFileType resultFileType;
 
 
 	String hostname;
@@ -171,7 +171,7 @@ public class TestRunner {
 				suiteResult.incrementFailedTests();
 				results.addTestResult(testResultInfo, 
 						currentTestResult, 
-						Result.TestFail, 
+						ResultStatus.TestFail, 
 						startTestTime);
 
 				// stop current test if no driver and continue with the next test
@@ -193,7 +193,7 @@ public class TestRunner {
 						suiteResult.incrementSucceededTests();
 						results.addTestResult(testResultInfo, 
 								currentTestResult, 
-								Result.TestPass, 
+								ResultStatus.TestPass, 
 								startTestTime);
 						break;
 					}
@@ -203,7 +203,7 @@ public class TestRunner {
 							suiteResult.incrementFailedTests();
 							results.addTestResult(testResultInfo, 
 									currentTestResult, 
-									Result.TestFail, 
+									ResultStatus.TestFail, 
 									startTestTime);
 						}
 					}
@@ -407,7 +407,7 @@ public class TestRunner {
 	
 							results.addTestCaseResult(testResult, 
 									testCaseResult, 
-									Result.TestCasePass, 
+									ResultStatus.TestCasePass, 
 									startTestCaseTime);
 							
 							break;
@@ -419,7 +419,7 @@ public class TestRunner {
 							
 							results.addTestCaseResult(testResult, 
 									testCaseResult, 
-									Result.TestCaseFail, 
+									ResultStatus.TestCaseFail, 
 									startTestCaseTime);
 
 							// save screen shot at failure moment 
@@ -446,7 +446,7 @@ public class TestRunner {
 
 						results.addTestCaseResult(testResult, 
 								testCaseResult, 
-								Result.TestCaseFail, 
+								ResultStatus.TestCaseFail, 
 								startTestCaseTime);
 						
 						logger.log("No runner is available for this type of test case! - " + testCaseName );
@@ -462,7 +462,7 @@ public class TestRunner {
 
 					results.addTestCaseResult(testResult,
 							testCaseResult, 
-							Result.TestCaseCrash, 
+							ResultStatus.TestCaseCrash, 
 							startTestCaseTime);	
 
 

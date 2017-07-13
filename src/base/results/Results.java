@@ -10,7 +10,7 @@ import java.util.TreeMap;
 
 import base.Logger;
 import base.TestCaseDocs;
-import base.xml.XmlResult.Result;
+import base.results.ResultStatus;
 import base.xml.XmlTestConfig;
 
 public class Results {
@@ -27,7 +27,7 @@ public class Results {
 	public void addTestResult(
 			List<TestResult> testResultInfo,
 			TestResult testResult, 
-			Result result, 
+			ResultStatus result, 
 			Instant startTestTime){
 
 		testResult.setElapsedTestTime( startTestTime );
@@ -48,7 +48,7 @@ public class Results {
 	public void addTestCaseResult(
 			TestResult testResult, 
 			TestCaseResult testCaseResult, 
-			Result result, 
+			ResultStatus result, 
 			Instant startTestCaseTime){
 		
 		logger.log("test_" + testResult.getId() + "/" 
@@ -87,28 +87,28 @@ public class Results {
 	 * 
 	 * @return - test information string
 	 */
-	public String getTextInfo(ResultInfo testResultInfo, 
+	public String getTextInfo(Result result, 
 			Integer defaultColWidth){
 		String colWidth = Integer.toString(defaultColWidth);
 		String format = "%-"+ colWidth + "s";
 		// details: all attributes but name
 		Map<String, String> details = new TreeMap<>();
-		details.putAll(testResultInfo.getAttributes());
+		details.putAll(result.getAttributes());
 		details.remove("name");
 
-		return String.format(format, testResultInfo.getId() ) + " | " 
+		return String.format(format, result.getId() ) + " | " 
 			+ String.format(format.replace(colWidth, "20"), 
-					testResultInfo.getElapsedTime() ) + " | "
+					result.getElapsedTime() ) + " | "
 			+ String.format(format.replace(colWidth, "40"), 
-					testResultInfo.getAttributes().get("name") ) + " | "
+					result.getAttributes().get("name") ) + " | "
 			+ String.format(format.replace(colWidth, "15"),
-					testResultInfo.getResult()) + " | "
+					result.getResult()) + " | "
 			+ String.format(format, details);
 	}
 	
 	
 
-	public String getDetailedResultsText(List<TestResult> testResultInfo,
+	public String getDetailedResultsText(List<TestResult> testResults,
 			SuiteResult suiteResult){
 		StringBuilder resultsString = new StringBuilder();
 
@@ -116,7 +116,7 @@ public class Results {
 		.append(logger.getSeparator()+"\n")
 		.append(TestResult.getHeader(15)+"\n");
 
-		for (TestResult testResult : testResultInfo){
+		for (TestResult testResult : testResults){
 			resultsString.append(testResult.getInfo(15)+"\n");
 			Map<Integer, TestCaseResult> testCasesResults = testResult.getTestCasesResults();
 			testCasesResults.values().forEach( 

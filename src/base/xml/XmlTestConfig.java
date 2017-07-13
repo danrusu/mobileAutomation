@@ -12,7 +12,7 @@ import org.w3c.dom.NamedNodeMap;
 
 import base.Logger;
 import base.TestConfig;
-import base.results.ResultInfo.ResultFileType;
+import base.results.Result.ResultFileType;
 
 
 /**

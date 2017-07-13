@@ -4,11 +4,11 @@ import java.time.Instant;
 import java.util.Map;
 import java.util.TreeMap;
 
+import base.results.ResultStatus;
 import base.tools.TimeUtils;
-import base.xml.XmlResult.Result;
 
 
-public class TestResultInfo {
+public class Result {
 	/**
 	 * Available result file types.
 	 * 
@@ -24,13 +24,13 @@ public class TestResultInfo {
 	private Map<String, String> attributes;
 
 
-	private Result result;
+	private ResultStatus result;
 	private String elapsedTime;
 	private long elapsedTimeInMillis;
 
 	
 
-	public TestResultInfo(String id, Map<String, String> attributes) {	
+	public Result(String id, Map<String, String> attributes) {	
 		this.id = id;
 		this.attributes = attributes;
 	}
@@ -92,7 +92,7 @@ public class TestResultInfo {
 	
 		
 
-	public Result getResult() {
+	public ResultStatus getResult() {
 		return result;
 	}
 
@@ -105,7 +105,7 @@ public class TestResultInfo {
 	
 	
 	// Setters
-	public void setResult(Result result) {
+	public void setResult(ResultStatus result) {
 		this.result = result;
 	}
 
