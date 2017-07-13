@@ -1,4 +1,4 @@
-# mat v1.1
+# mat v1.0
 
 ## Test automation project for mobile devices.
 
