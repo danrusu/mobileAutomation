@@ -8,5 +8,4 @@
 
 [Wiki](https://github.com/danrusu/mobileAutomation/wiki)
 
-Demo
 [![Mobile Test Automation](https://img.youtube.com/vi/hGrD7zX4zn4/0.jpg)](https://youtu.be/hGrD7zX4zn4 "Mobile Test Automation Demo")
