@@ -2,10 +2,10 @@
 
 ## Test automation project for mobile devices.
 
-Wiki: https://github.com/danrusu/mobileAutomation/wiki
+[Project description](docs/_README_mat.pdf)
 
-Detailed project description:  docs/_README_mat.pdf
+[Demo video](docs/demo.mp4)
 
-Demo:                          docs/demo.mp4
+[Wiki](https://github.com/danrusu/mobileAutomation/wiki)
 
-All code is under GNU General Public License v3.0.
+### [All code is under GNU General Public License v3.0](LICENSE)
