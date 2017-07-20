@@ -1,4 +1,4 @@
-# ![](images/android_100.png)  mat v1.0
+# ![](images/android_50.png)  mat v1.0
 
 ## Test automation project for mobile devices.
 
