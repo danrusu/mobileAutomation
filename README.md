@@ -2,7 +2,7 @@
 
 ## Test automation project for mobile devices.
 
-[Project description](docs/_README_mat.pdf)
+[Project description (pdf)](docs/_README_mat.pdf)
 
 [Demo](docs/demo.mp4)
 
