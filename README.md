@@ -4,8 +4,8 @@
 
 [Project description](docs/_README_mat.pdf)
 
-[Demo video](docs/demo.mp4)
-
 [Wiki](https://github.com/danrusu/mobileAutomation/wiki)
 
 ### [All code is under GNU General Public License v3.0](LICENSE)
+
+[![Demo video](https://img.youtube.com/vi/hGrD7zX4zn4/0.jpg)](https://youtu.be/hGrD7zX4zn4 "Mobile Test Automation")
