@@ -2,9 +2,9 @@
 
 ## Test automation project for mobile devices.
 
-[Project description (pdf)](docs/_README_mat.pdf)
+[Project description](docs/_README_mat.pdf)
 
-[Demo](docs/demo.mp4)
+[Demo video](docs/demo.mp4)
 
 [Wiki](https://github.com/danrusu/mobileAutomation/wiki)
 
